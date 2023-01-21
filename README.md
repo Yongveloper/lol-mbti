@@ -19,8 +19,9 @@
 </p>
 
 ## ❗ What I Earned
+
 - 개발 전 <strong>와이어프레임</strong>, <strong>기능명세서</strong> 작성의 필요성
-- 기능 단위 <strong>Issue</strong> 작성 후 <strong>Issue 단위</strong>로 개발 진행 
+- 기능 단위 <strong>Issue</strong> 작성 후 <strong>Issue 단위</strong>로 개발 진행
 - 컴포넌트 <strong>구조 설계</strong>하기
 - <strong>함수형 컴포넌트</strong>의 사용
 - <strong>반응형</strong> 웹 디자인 적용
@@ -142,3 +143,25 @@
 ## 📚 기술 스택
 
 <img width="400" alt="result-page" src="https://user-images.githubusercontent.com/64254228/130268396-9f416dc9-70d7-409d-ab0c-a745eff6da90.png">
+
+# 💻 프로젝트 실행 방법
+
+## 1. .gitignore 파일
+
+```
+/* .env 파일 */
+NEXT_PUBLIC_KAKAO_API_KEY=카카오 API Key
+```
+
+## 2. 개발 환경 실행
+
+```
+npm run dev
+```
+
+## 3. 배포 환경 실행
+
+```
+1. npm run build
+2. npm start
+```
