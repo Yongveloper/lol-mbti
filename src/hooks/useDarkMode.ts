@@ -7,7 +7,7 @@ const useDarkMode = (): [string | undefined, () => void] => {
   const DARK = 'dark';
   const { themeMode, setThemeMode } = useContext(ThemeContext) as Theme;
 
-  const swicthTheme = useCallback(() => {
+  const switchTheme = useCallback(() => {
     if (themeMode === LIGHT) {
       window.localStorage.setItem(LS_KEY, DARK);
       setThemeMode(DARK);
@@ -23,7 +23,7 @@ const useDarkMode = (): [string | undefined, () => void] => {
     setThemeMode(initialState);
   }, [themeMode, setThemeMode]);
 
-  return [themeMode, swicthTheme];
+  return [themeMode, switchTheme];
 };
 
 export default useDarkMode;
