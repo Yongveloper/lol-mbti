@@ -21,7 +21,7 @@ const useDarkMode = (): [string | undefined, () => void] => {
     const localTheme = window.localStorage.getItem(LS_KEY);
     const initialState = localTheme ? localTheme : LIGHT;
     setThemeMode(initialState);
-  }, [themeMode, setThemeMode]);
+  }, [setThemeMode]);
 
   return [themeMode, switchTheme];
 };
