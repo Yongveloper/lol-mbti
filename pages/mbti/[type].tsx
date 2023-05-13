@@ -69,7 +69,7 @@ const Type = ({ type }: IProps) => {
   const contents = types[type];
   const { position: positions, image, content, note } = contents;
   const position = positions[0];
-  const positonSub = positions[1];
+  const positionSub = positions[1];
 
   const saveAsImageHandler = async () => {
     const target = document.getElementById('content');
@@ -93,10 +93,10 @@ const Type = ({ type }: IProps) => {
   return (
     <>
       <Head>
-        <title>{`${type} : ${position}${positonSub}`}</title>
+        <title>{`${type} : ${position}${positionSub}`}</title>
         <meta
           property="og:title"
-          content={`${type} : ${position}${positonSub}`}
+          content={`${type} : ${position}${positionSub}`}
         />
         <meta
           property="og:image"
@@ -114,14 +114,14 @@ const Type = ({ type }: IProps) => {
               {type}
               <h2>
                 {position}
-                <PositionText>{positonSub}</PositionText>
+                <PositionText>{positionSub}</PositionText>
               </h2>
               <Image src={image} width={100} height={100} alt="position" />
             </Div>
             <Div>
               <ContentList content={content} />
               <BoldText>
-                {type} {positonSub}이(가) 주의할 점:
+                {type} {positionSub}이(가) 주의할 점:
               </BoldText>
               <p>{note}</p>
             </Div>
