@@ -18,7 +18,23 @@
     <img src="https://img.shields.io/badge/styled components-v5.3.0-pink?logo=react">
 </p>
 
-## 프로젝트 구조
+## ❗ What I Earned
+
+- 개발 전 <strong>와이어프레임</strong>, <strong>기능명세서</strong> 작성의 필요성
+- 기능 단위 <strong>Issue</strong> 작성 후 <strong>Issue 단위</strong>로 개발 진행
+- 컴포넌트 <strong>구조 설계</strong>하기
+- <strong>함수형 컴포넌트</strong>의 사용
+- <strong>반응형</strong> 웹 디자인 적용
+- <strong>useState</strong>와 <strong>useEffect</strong> 사용
+- <strong>TypeScript</strong> 기본적인 사용 및 이해
+- Next.js의 <strong>getStaticProps</strong>에 대한 <storng>SSG</strong> 이해
+- <strong>SEO 최적화</strong>
+- <strong>Styled-Component</strong> 사용 및 이해
+- <strong>ThemProvider</strong>를 이용한 다크모드 지원
+- <strong>Google Analytics</strong> 적용
+- <strong>오픈 API(카카오톡 공유)</strong> 적용 및 이해
+
+## 📂 프로젝트 구조
 
 ```bash
 📦public
@@ -127,3 +143,25 @@
 ## 📚 기술 스택
 
 <img width="400" alt="result-page" src="https://user-images.githubusercontent.com/64254228/130268396-9f416dc9-70d7-409d-ab0c-a745eff6da90.png">
+
+# 💻 프로젝트 실행 방법
+
+## 1. .gitignore 파일
+
+```
+/* .env 파일 */
+NEXT_PUBLIC_KAKAO_API_KEY=카카오 API Key
+```
+
+## 2. 개발 환경 실행
+
+```
+npm run dev
+```
+
+## 3. 배포 환경 실행
+
+```
+1. npm run build
+2. npm start
+```

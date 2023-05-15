@@ -15,6 +15,7 @@ const KakaoBtn = () => {
       requestUrl: location.href,
     });
   };
+
   return (
     <SButton fontColor="yellow" borderColor="whiteYellow" onClick={onClick}>
       <KakaoIcon viewBox="0 0 60 48" width="30px" height="23px" />

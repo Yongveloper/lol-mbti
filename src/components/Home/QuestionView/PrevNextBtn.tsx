@@ -26,7 +26,7 @@ const PrevNextBtnContainer = styled.div<{
   }
 `;
 
-interface IProps {
+interface IPrevNextBtnProps {
   completed: number;
   currentQuestion: number;
   setCurrentQuestion: React.Dispatch<React.SetStateAction<number>>;
@@ -38,7 +38,7 @@ const PrevNextBtn = ({
   completed,
   currentQuestion,
   setCurrentQuestion,
-}: IProps) => {
+}: IPrevNextBtnProps) => {
   const prevDisabled = currentQuestion === 0;
   const nextDisabled = completed === currentQuestion || currentQuestion === 11;
 

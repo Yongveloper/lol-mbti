@@ -39,6 +39,12 @@ const QuestionView = () => {
   const [selected, setSelected] = useState<string[]>([]);
 
   const onAnswerClick = (event: React.MouseEvent<HTMLElement>) => {
+    checkProgressAndCompletedQuestion();
+    const type = event.currentTarget.getAttribute('name');
+    SelectAnAnswer(type);
+  };
+
+  const checkProgressAndCompletedQuestion = () => {
     if (currentQuestion < questions.length - 1) {
       setCurrentQuestion((prev) => prev + 1);
     }
@@ -48,12 +54,25 @@ const QuestionView = () => {
     ) {
       setCompleted((prev) => prev + 1);
     }
-    const type = event.currentTarget.getAttribute('name');
+  };
+
+  const SelectAnAnswer = (type: string | null) => {
     if (type) {
       const selectedArray = [...selected];
       selectedArray[currentQuestion] = type;
       setSelected(selectedArray);
     }
+  };
+
+  const onResultClick = () => {
+    if (completed !== questions.length) return;
+    setLoading(true);
+    pushToMbtiType();
+  };
+
+  const pushToMbtiType = () => {
+    const mbtiType = getResult();
+    setTimeout(() => router.push(`/mbti/${mbtiType}`), 2500);
   };
 
   const getResult = (): string => {
@@ -80,13 +99,6 @@ const QuestionView = () => {
     const result = mbtiTypes.filter((type) => mbti[type] >= 2).join('');
 
     return result;
-  };
-
-  const onResultClick = () => {
-    if (completed !== questions.length) return;
-    setLoading(true);
-    const mbtiType = getResult();
-    setTimeout(() => router.push(`/mbti/${mbtiType}`), 2500);
   };
 
   return (

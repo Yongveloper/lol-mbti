@@ -38,7 +38,7 @@ const SButton = styled.button<{
   }}
 `;
 
-interface IProps {
+interface IButtonProps {
   children: React.ReactNode;
   bgColor: Color;
   fontColor: Color;
@@ -47,7 +47,7 @@ interface IProps {
   name?: string;
 }
 
-const Button = ({ children, onClick, ...rest }: IProps) => (
+const Button = ({ children, onClick, ...rest }: IButtonProps) => (
   <SButton onClick={onClick} {...rest}>
     {children}
   </SButton>

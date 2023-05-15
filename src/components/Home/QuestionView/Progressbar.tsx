@@ -18,7 +18,7 @@ const Container = styled.div`
   overflow: hidden;
 `;
 
-const Bar = styled.div<IProps>`
+const Bar = styled.div<IProgressbarProps>`
   ${({ current }) => `width: calc(100 / 11 * ${current}%)`};
   height: 100%;
   background-color: ${({ theme }) => theme.color.lightBlue};
@@ -32,11 +32,11 @@ const Bar = styled.div<IProps>`
   transition: width 0.5s ease;
 `;
 
-interface IProps {
+interface IProgressbarProps {
   current: number;
 }
 
-const Progressbar = ({ current }: IProps) => {
+const Progressbar = ({ current }: IProgressbarProps) => {
   return (
     <Container>
       <Bar current={current} />

@@ -14,12 +14,12 @@ const Container = styled.div`
   }}
 `;
 
-interface IProps {
+interface IContentProps {
   className?: string;
   children: React.ReactNode;
 }
 
-const Content = ({ className, children }: IProps) => {
+const Content = ({ className, children }: IContentProps) => {
   return <Container className={className}>{children}</Container>;
 };
 

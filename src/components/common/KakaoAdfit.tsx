@@ -4,13 +4,13 @@ const Container = styled.div`
   margin-bottom: ${({ theme }) => theme.margin.base};
 `;
 
-interface IProps {
+interface IKaKaoAdFitProps {
   width: string;
   height: string;
   unit: string;
 }
 
-const KakaoAdfit = ({ width, height, unit }: IProps) => {
+const KakaoAdfit = ({ width, height, unit }: IKaKaoAdFitProps) => {
   return (
     <>
       <Container>

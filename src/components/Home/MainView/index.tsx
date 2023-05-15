@@ -4,11 +4,11 @@ import KakaoBtn from 'src/components/Buttons/KakaoBtn';
 import Title from './Title';
 import AllTypeBtn from 'src/components/Buttons/AllTypeBtn';
 
-interface IProps {
+interface IMainViewProps {
   startHandler: () => void;
 }
 
-const MainView = ({ startHandler }: IProps) => {
+const MainView = ({ startHandler }: IMainViewProps) => {
   return (
     <main>
       <Title />

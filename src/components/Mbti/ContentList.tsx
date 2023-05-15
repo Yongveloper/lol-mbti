@@ -11,11 +11,11 @@ const Li = styled.li`
   }
 `;
 
-interface IProps {
+interface IContentListProps {
   content: Array<string>;
 }
 
-const ContentList = ({ content }: IProps) => {
+const ContentList = ({ content }: IContentListProps) => {
   return (
     <Ul>
       {content.map((text, index) => (

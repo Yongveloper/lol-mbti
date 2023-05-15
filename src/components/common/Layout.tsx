@@ -18,11 +18,11 @@ const Wrapper = styled.div`
   justify-content: center;
 `;
 
-interface IProps {
+interface ILayoutProps {
   children: React.ReactNode;
 }
 
-const Layout = ({ children }: IProps) => {
+const Layout = ({ children }: ILayoutProps) => {
   const router = useRouter();
 
   useEffect(() => {
