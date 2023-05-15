@@ -995,6 +995,11 @@
     minimatch "^3.0.4"
     strip-json-comments "^3.1.1"
 
+"@fontsource/noto-sans-kr@^4.5.12":
+  version "4.5.12"
+  resolved "https://registry.yarnpkg.com/@fontsource/noto-sans-kr/-/noto-sans-kr-4.5.12.tgz#382d6cdd1928943ca15e80ca013e3b6cf5809f50"
+  integrity sha512-6LBOzXw/V4guB/nATaiUjCcPxwJNGw+ky5DK7/wsgUZvfk8etH9IlKdvjFVidpeCuMVjOdlka2+MEw4hwEHaHA==
+
 "@hapi/accept@5.0.2":
   version "5.0.2"
   resolved "https://registry.yarnpkg.com/@hapi/accept/-/accept-5.0.2.tgz#ab7043b037e68b722f93f376afb05e85c0699523"

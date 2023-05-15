@@ -1,3 +1,7 @@
+import '@fontsource/noto-sans-kr/400.css';
+import '@fontsource/noto-sans-kr/500.css';
+import '@fontsource/noto-sans-kr/700.css';
+
 export const size = {
   pc: '1200px',
   tab: '900px',
@@ -43,8 +47,7 @@ const color = {
 
 const font = {
   family: {
-    base: `-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
-    Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;`,
+    base: `"Noto Sans KR", sans-serif`,
   },
   size: {
     xLarge: '48px',

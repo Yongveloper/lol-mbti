@@ -10,6 +10,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@fontsource/noto-sans-kr": "^4.5.12",
     "@types/styled-components": "^5.1.11",
     "file-saver": "^2.0.5",
     "html2canvas": "^1.4.1",
