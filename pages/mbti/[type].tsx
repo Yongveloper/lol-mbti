@@ -1,3 +1,4 @@
+import { useRef } from 'react';
 import { GetStaticProps, GetStaticPropsContext } from 'next';
 import Head from 'next/head';
 import Image from 'next/image';
@@ -5,12 +6,11 @@ import styled, { css } from 'styled-components';
 import Content from 'src/components/common/Content';
 import types from 'src/data/result';
 import ContentList from 'src/components/Mbti/ContentList';
-import Button from 'src/components/common/Button';
 import KakaoBtn from 'src/components/Buttons/KakaoBtn';
 import CopyBtn from 'src/components/Buttons/CopyBtn';
-import html2canvas from 'html2canvas';
 import ReplayBtn from 'src/components/Buttons/ReplayBtn';
 import AllTypeBtn from 'src/components/Buttons/AllTypeBtn';
+import SaveImageBtn from 'src/components/Buttons/SaveImageBtn';
 
 const SContent = styled(Content)`
   ${({ theme }) => {
@@ -70,34 +70,7 @@ const Type = ({ type }: ITypeProps) => {
   const { position: positions, image, content, note } = contents;
   const position = positions[0];
   const subPosition = positions[1];
-
-  const saveImage = async () => {
-    const target = document.getElementById('content');
-    if (target) {
-      alert(
-        '새로운 창이 열리면\nPC에서는 우클릭 -> 이미지 저장하기\n모바일은 이미지를 꾹 눌러주세요!\n*새로운 창이 안 열린다면 팝업을 해제해주세요*'
-      );
-      const canvas = await html2canvas(target);
-      canvas.toBlob((blob) => {
-        if (blob) {
-          const uri = URL.createObjectURL(blob);
-          window.open(uri);
-        }
-      });
-    }
-  };
-
-  const saveImageError = () => {
-    return alert('결과를 저장할 수 없습니다.');
-  };
-
-  const onClick = async () => {
-    try {
-      saveImage();
-    } catch (error) {
-      saveImageError();
-    }
-  };
+  const resultRef = useRef<HTMLDivElement>(null);
 
   return (
     <>
@@ -117,7 +90,7 @@ const Type = ({ type }: ITypeProps) => {
         <link rel="canonical" href="https://lol-mbti.vercel.app/mbti" />
       </Head>
       <main>
-        <div id="content">
+        <div ref={resultRef}>
           <SContent>
             <Div>
               {type}
@@ -146,9 +119,7 @@ const Type = ({ type }: ITypeProps) => {
           </SContent>
         </div>
         <ReplayBtn />
-        <Button fontColor="red" borderColor="pink" onClick={onClick}>
-          결과 저장하기
-        </Button>
+        <SaveImageBtn divRef={resultRef} />
         <KakaoBtn />
         <CopyBtn />
         <AllTypeBtn />
