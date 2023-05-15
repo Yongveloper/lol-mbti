@@ -1,4 +1,5 @@
 import Button from '../common/Button';
+import html2canvas from 'html2canvas';
 import domtoimage from 'dom-to-image';
 import saveAs from 'file-saver';
 
@@ -9,11 +10,17 @@ interface ISaveImageBtnProps {
 function SaveImageBtn({ divRef }: ISaveImageBtnProps) {
   const handleDownload = async () => {
     if (!divRef.current) return;
+
     try {
-      const blob = await domtoimage.toBlob(divRef.current);
-      saveAs(blob, 'result.png');
+      const div = divRef.current;
+      const canvas = await html2canvas(div);
+      canvas.toBlob((blob) => {
+        if (blob !== null) {
+          saveAs(blob, 'div-image.png');
+        }
+      });
     } catch (error) {
-      console.error('결과를 저장할 수 없습니다.', error);
+      console.error('Error converting div to image:', error);
     }
   };
 

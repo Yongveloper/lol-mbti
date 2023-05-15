@@ -90,7 +90,7 @@ const Type = ({ type }: ITypeProps) => {
         <link rel="canonical" href="https://lol-mbti.vercel.app/mbti" />
       </Head>
       <main>
-        <div id="content" ref={resultRef}>
+        <div ref={resultRef}>
           <SContent>
             <Div>
               {type}
