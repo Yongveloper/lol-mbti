@@ -12,7 +12,7 @@ function SaveImageBtn({ divRef }: ISaveImageBtnProps) {
 
     try {
       const div = divRef.current;
-      const canvas = await html2canvas(div);
+      const canvas = await html2canvas(div, { scale: 2 });
       canvas.toBlob((blob) => {
         if (blob !== null) {
           saveAs(blob, 'result.png');
