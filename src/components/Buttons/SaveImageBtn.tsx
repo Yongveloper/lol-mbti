@@ -1,6 +1,5 @@
 import Button from '../common/Button';
 import html2canvas from 'html2canvas';
-import domtoimage from 'dom-to-image';
 import saveAs from 'file-saver';
 
 interface ISaveImageBtnProps {
@@ -16,7 +15,7 @@ function SaveImageBtn({ divRef }: ISaveImageBtnProps) {
       const canvas = await html2canvas(div);
       canvas.toBlob((blob) => {
         if (blob !== null) {
-          saveAs(blob, 'div-image.png');
+          saveAs(blob, 'result.png');
         }
       });
     } catch (error) {
