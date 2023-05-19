@@ -1,7 +1,6 @@
 import { useRef } from 'react';
 import { GetStaticProps, GetStaticPropsContext } from 'next';
 import Head from 'next/head';
-import Image from 'next/image';
 import styled, { css } from 'styled-components';
 import Content from 'src/components/common/Content';
 import types from 'src/data/result';
@@ -40,6 +39,13 @@ const Div = styled.div`
       }
     `;
   }}
+`;
+
+const PositionImg = styled.div<{ src: string }>`
+  background-image: url(${(props) => props.src});
+  background-size: 100% auto;
+  width: 100px;
+  height: 100px;
 `;
 
 const PositionText = styled.span`
@@ -98,7 +104,7 @@ const Type = ({ type }: ITypeProps) => {
                 {position}
                 <PositionText>{subPosition}</PositionText>
               </h2>
-              <Image src={image} width={100} height={100} alt="position" />
+              <PositionImg src={image} role="img" />
             </Div>
             <Div>
               <ContentList content={content} />
