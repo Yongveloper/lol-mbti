@@ -8,7 +8,7 @@ import Progressbar from './Progressbar';
 import LoadingModal from 'src/components/common/LoadingModal';
 import { useRouter } from 'next/router';
 
-const QestionText = styled.p`
+const QuestionText = styled.p`
   width: 100%;
   font-size: ${({ theme }) => theme.font.size.regular};
   line-height: 1.5;
@@ -41,7 +41,7 @@ const QuestionView = () => {
   const onAnswerClick = (event: React.MouseEvent<HTMLElement>) => {
     checkProgressAndCompletedQuestion();
     const type = event.currentTarget.getAttribute('name');
-    SelectAnAnswer(type);
+    selectAnAnswer(type);
   };
 
   const checkProgressAndCompletedQuestion = () => {
@@ -56,7 +56,7 @@ const QuestionView = () => {
     }
   };
 
-  const SelectAnAnswer = (type: string | null) => {
+  const selectAnAnswer = (type: string | null) => {
     if (type) {
       const selectedArray = [...selected];
       selectedArray[currentQuestion] = type;
@@ -111,7 +111,7 @@ const QuestionView = () => {
       <Progressbar current={currentQuestion} />
       <Content>
         {questions[currentQuestion].question.split('\n').map((text) => (
-          <QestionText key={text}>{text}</QestionText>
+          <QuestionText key={text}>{text}</QuestionText>
         ))}
       </Content>
       {questions[currentQuestion].answers.map((answer, index) => (
