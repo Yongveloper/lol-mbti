@@ -60,7 +60,7 @@ const Text = styled.h2`
   }}
 `;
 
-const Loader = () => {
+const LoadingModal = () => {
   return (
     <Wrapper>
       <Overlay />
@@ -72,4 +72,4 @@ const Loader = () => {
   );
 };
 
-export default Loader;
+export default LoadingModal;

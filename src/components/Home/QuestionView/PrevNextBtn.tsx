@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import { IoIosArrowDropleft, IoIosArrowDropright } from 'react-icons/io';
 import styled from 'styled-components';
 
@@ -32,7 +31,10 @@ interface IPrevNextBtnProps {
   setCurrentQuestion: React.Dispatch<React.SetStateAction<number>>;
 }
 
-type ButtonType = 'prev' | 'next';
+enum ButtonType {
+  Prev = 'prev',
+  Next = 'next',
+}
 
 const PrevNextBtn = ({
   completed,
@@ -42,10 +44,10 @@ const PrevNextBtn = ({
   const prevDisabled = currentQuestion === 0;
   const nextDisabled = completed === currentQuestion || currentQuestion === 11;
 
-  const onClick = (type: ButtonType) => {
-    if (type === 'prev' && !prevDisabled) {
+  const onClickCallback = (type: ButtonType) => {
+    if (type === ButtonType.Prev && !prevDisabled) {
       setCurrentQuestion((prev) => prev - 1);
-    } else if (type === 'next' && !nextDisabled) {
+    } else if (type === ButtonType.Next && !nextDisabled) {
       setCurrentQuestion((prev) => prev + 1);
     }
   };
@@ -55,8 +57,8 @@ const PrevNextBtn = ({
       prevDisabled={prevDisabled}
       nextDisabled={nextDisabled}
     >
-      <IoIosArrowDropleft onClick={() => onClick('prev')} />
-      <IoIosArrowDropright onClick={() => onClick('next')} />
+      <IoIosArrowDropleft onClick={() => onClickCallback(ButtonType.Prev)} />
+      <IoIosArrowDropright onClick={() => onClickCallback(ButtonType.Next)} />
     </PrevNextBtnContainer>
   );
 };
