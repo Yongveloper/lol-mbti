@@ -20,19 +20,20 @@
 
 ## ❗ What I Earned
 
-- 개발 전 <strong>와이어프레임</strong>, <strong>기능명세서</strong> 작성의 필요성
-- 기능 단위 <strong>Issue</strong> 작성 후 <strong>Issue 단위</strong>로 개발 진행
-- 컴포넌트 <strong>구조 설계</strong>하기
-- <strong>함수형 컴포넌트</strong>의 사용
-- <strong>반응형</strong> 웹 디자인 적용
-- <strong>useState</strong>와 <strong>useEffect</strong> 사용
-- <strong>TypeScript</strong> 기본적인 사용 및 이해
-- Next.js의 <strong>getStaticProps</strong>에 대한 <storng>SSG</strong> 이해
-- <strong>SEO 최적화</strong>
-- <strong>Styled-Component</strong> 사용 및 이해
-- <strong>ThemProvider</strong>를 이용한 다크모드 지원
-- <strong>Google Analytics</strong> 적용
-- <strong>오픈 API(카카오톡 공유)</strong> 적용 및 이해
+- 개발 전 <b>와이어프레임</b>, <b>기능명세서</b> 작성의 필요성
+- 기능 단위 <b>Issue</b> 작성 후 <b>Issue 단위</b>로 개발 진행
+- 컴포넌트 <b>구조 설계</b>하기
+- <b>함수형 컴포넌트</b>의 사용
+- <b>반응형</b> 웹 디자인 적용
+- <b>useState</b>와 <b>useEffect</b> 사용
+- <b>TypeScript</b> 기본적인 사용 및 이해
+- Next.js의 <b>getStaticProps</b>에 대한 <storng>SSG</b> 이해
+- <b>SEO 최적화</b>
+- <b>Styled-Component</b> 사용 및 이해
+- <b>ThemProvider</b>를 이용한 다크모드 지원
+- <b>Google Analytics</b> 적용
+- <b>오픈 API(카카오톡 공유)</b> 적용 및 이해
+- <b>html2canvas<b> + <b>file-saver</b>로 DOM 캡쳐 + 저장 기능 구현 및 이해
 
 ## 📂 프로젝트 구조
 
