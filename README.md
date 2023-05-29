@@ -10,7 +10,7 @@
 
 배포: [https://lol-mbti.vercel.app](https://lol-mbti.vercel.app)
 
-### [개발 배경](https://yongvelpoer.gitbook.io/lol-mbti/)
+### [개발 배경](https://yongvelpoer.gitbook.io/lol-mbti/)에서 개발 중 시행착오, 설계 등 확인할 수 있습니다.
 
 <p align='center'>
     <img src="https://img.shields.io/badge/Typescript-v4.3.5-blue?logo=typescript"/>
@@ -33,79 +33,13 @@
 - <b>ThemProvider</b>를 이용한 다크모드 지원
 - <b>Google Analytics</b> 적용
 - <b>오픈 API(카카오톡 공유)</b> 적용 및 이해
-- <b>html2canvas<b> + <b>file-saver</b>로 DOM 캡쳐 + 저장 기능 구현 및 이해
-
-## 📂 프로젝트 구조
-
-```bash
-📦public
- ┣ 📂images
- ┃ ┣ 📂position
- ┃ ┃ ┣ 📜ad.png
- ┃ ┃ ┣ 📜jg.png
- ┃ ┃ ┣ 📜mid.png
- ┃ ┃ ┣ 📜sp.png
- ┃ ┃ ┗ 📜top.png
- ┃ ┣ 📜kakaotalk_logo_icon_147272.svg
- ┃ ┣ 📜logo.png
- ┃ ┣ 📜moon.svg
- ┃ ┣ 📜sunny.svg
- ┃ ┗ 📜zed.png
- ┣ 📜favicon.ico
- ┣ 📜robots.txt
- ┣ 📜sitemap.xml
- ┗ 📜vercel.svg
- 📦pages
- ┣ 📂api
- ┃ ┗ 📜hello.ts
- ┣ 📂mbti
- ┃ ┗ 📜[type].tsx
- ┣ 📜index.tsx
- ┣ 📜mbti.tsx
- ┣ 📜_app.tsx
- ┗ 📜_document.tsx
- 📦src
- ┣ 📂components
- ┃ ┣ 📂Buttons
- ┃ ┃ ┣ 📜AllTypeBtn.tsx
- ┃ ┃ ┣ 📜CopyBtn.tsx
- ┃ ┃ ┣ 📜DarkModeBtn.tsx
- ┃ ┃ ┣ 📜KakaoBtn.tsx
- ┃ ┃ ┗ 📜ReplayBtn.tsx
- ┃ ┣ 📂common
- ┃ ┃ ┣ 📜Button.tsx
- ┃ ┃ ┣ 📜Content.tsx
- ┃ ┃ ┣ 📜Footer.tsx
- ┃ ┃ ┣ 📜Layout.tsx
- ┃ ┃ ┗ 📜LoadingModal.tsx
- ┃ ┣ 📂Home
- ┃ ┃ ┣ 📂MainView
- ┃ ┃ ┃ ┣ 📜index.tsx
- ┃ ┃ ┃ ┗ 📜Title.tsx
- ┃ ┃ ┣ 📂QuestionView
- ┃ ┃ ┃ ┣ 📜index.tsx
- ┃ ┃ ┃ ┣ 📜PrevNextBtn.tsx
- ┃ ┃ ┃ ┗ 📜Progressbar.tsx
- ┃ ┃ ┗ 📜index.tsx
- ┃ ┗ 📂Mbti
- ┃ ┃ ┗ 📜ContentList.tsx
- ┣ 📂context
- ┃ ┗ 📜ThemeProvider.tsx
- ┣ 📂data
- ┃ ┣ 📜questions.ts
- ┃ ┗ 📜result.ts
- ┗ 📂hooks
- ┃ ┗ 📜useDarkMode.ts
- 📦styles
- ┣ 📜GlobalStyle.ts
- ┣ 📜styled.d.ts
- ┗ 📜theme.ts
- 📦utils
- ┗ 📜gtag.ts
-...
-```
+- <b>html2canvas</b> + <b>file-saver</b>로 DOM 캡쳐, 저장 기능 구현 및 이해
 
 ## 🌟 주요 기능 및 페이지
+
+### SEO
+
+- SEO 최적화로 인해 '롤 MBTI', '롤 MBTI 테스트' 등 관련 검색어로 검색하면 1순위로 보여지고 있습니다. (구글, 네이버, 다음, 빙 등)
 
 ### 테마(다크모드)
 
@@ -125,7 +59,7 @@
 
 - 상단 화살표 버튼으로 문제를 전, 후로 이동할 수 있습니다.
 - 답변 클릭 시 다음 문제로 넘어가며 총 12문제 입니다.
-- React Hooks (state 활용)
+- Hash 자료구조를 활용해서 답변 클릭 시 답변에 맞는 MBTI 유형을 누적해서 도출하는 식으로 구성했습니다.
 
 ### 결과 보기
 
@@ -138,7 +72,7 @@
 <img width="400" alt="result-page" src="https://user-images.githubusercontent.com/64254228/130265500-022a251c-a756-4b31-bcd7-717ba20dfac1.png">
 
 - 해당 유형의 특징을 보여줍니다.
-- 결과 저장하기 클릭 시 결과 내용을 html2canvas을 사용해서 저장할 이미지로 저장할 수 있습니다.
+- 결과 저장하기 클릭 시 결과 내용을 html2canvas + file-saver를 사용해서 이미지로 저장할 수 있습니다.
 - 링크 복사하기 클릭 시 해당 링크를 클립보드로 복사할 수 있습니다.
 
 ## 📚 기술 스택
