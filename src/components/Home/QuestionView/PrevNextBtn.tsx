@@ -1,64 +1,45 @@
 import { IoIosArrowDropleft, IoIosArrowDropright } from 'react-icons/io';
 import styled from 'styled-components';
 
-const PrevNextBtnContainer = styled.div<{
-  prevDisabled: boolean;
-  nextDisabled: boolean;
-}>`
+const StyledButton = styled.svg<{ disabled: boolean }>`
+  width: 2.5rem;
+  height: 2.5rem;
+  cursor: ${({ disabled }) => (disabled ? 'not-allowed' : 'pointer')};
+  opacity: ${({ disabled }) => (disabled ? 0.3 : 1)};
+  transition: opacity 0.3s ease-in-out;
+`;
+
+const PrevNextBtnContainer = styled.div`
   width: 100%;
   display: flex;
   justify-content: space-between;
-
-  svg {
-    width: 2.5rem;
-    height: 2.5rem;
-    cursor: pointer;
-    transition: opacity 0.3s ease-in-out;
-    &:first-child {
-      opacity: ${({ prevDisabled }) => prevDisabled && 0.3};
-      cursor: ${({ prevDisabled }) => prevDisabled && 'not-allowed'};
-    }
-    &:nth-child(2) {
-      opacity: ${({ nextDisabled }) => nextDisabled && 0.3};
-      cursor: ${({ nextDisabled }) => nextDisabled && 'not-allowed'};
-    }
-  }
 `;
 
 interface IPrevNextBtnProps {
-  completed: number;
-  currentQuestion: number;
-  setCurrentQuestion: React.Dispatch<React.SetStateAction<number>>;
-}
-
-enum ButtonType {
-  Prev = 'prev',
-  Next = 'next',
+  prevDisabled: boolean;
+  nextDisabled: boolean;
+  onPrevClick: () => void;
+  onNextClick: () => void;
 }
 
 const PrevNextBtn = ({
-  completed,
-  currentQuestion,
-  setCurrentQuestion,
+  prevDisabled,
+  nextDisabled,
+  onPrevClick,
+  onNextClick,
 }: IPrevNextBtnProps) => {
-  const prevDisabled = currentQuestion === 0;
-  const nextDisabled = completed === currentQuestion || currentQuestion === 11;
-
-  const onClickCallback = (type: ButtonType) => {
-    if (type === ButtonType.Prev && !prevDisabled) {
-      setCurrentQuestion((prev) => prev - 1);
-    } else if (type === ButtonType.Next && !nextDisabled) {
-      setCurrentQuestion((prev) => prev + 1);
-    }
-  };
-
   return (
-    <PrevNextBtnContainer
-      prevDisabled={prevDisabled}
-      nextDisabled={nextDisabled}
-    >
-      <IoIosArrowDropleft onClick={() => onClickCallback(ButtonType.Prev)} />
-      <IoIosArrowDropright onClick={() => onClickCallback(ButtonType.Next)} />
+    <PrevNextBtnContainer>
+      <StyledButton
+        as={IoIosArrowDropleft}
+        disabled={prevDisabled}
+        onClick={onPrevClick}
+      />
+      <StyledButton
+        as={IoIosArrowDropright}
+        disabled={nextDisabled}
+        onClick={onNextClick}
+      />
     </PrevNextBtnContainer>
   );
 };
