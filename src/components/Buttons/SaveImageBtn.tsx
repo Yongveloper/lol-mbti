@@ -20,6 +20,7 @@ function SaveImageBtn({ divRef }: ISaveImageBtnProps) {
       });
     } catch (error) {
       console.error('Error converting div to image:', error);
+      alert('결과 저장에 실패했습니다.' + error);
     }
   };
 
