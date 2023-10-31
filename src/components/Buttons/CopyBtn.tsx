@@ -1,14 +1,9 @@
 import Button from '../common/Button';
 
 const CopyBtn = () => {
-  const currentURL = (() => {
-    if (typeof window !== 'undefined') {
-      return window.location.href;
-    }
-    return '';
-  })();
+  const currentURL = typeof window !== 'undefined' ? window.location.href : '';
 
-  const copyHandler = async () => {
+  const handleCopy = async () => {
     if (!navigator.clipboard) {
       return alert('복사하기가 지원되지 않는 브라우저입니다.');
     }
@@ -21,7 +16,7 @@ const CopyBtn = () => {
     }
   };
 
-  return <Button onClick={copyHandler}>링크 복사하기</Button>;
+  return <Button onClick={handleCopy}>링크 복사하기</Button>;
 };
 
 export default CopyBtn;
