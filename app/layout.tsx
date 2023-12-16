@@ -1,7 +1,5 @@
 'use client';
-
 import { useEffect } from 'react';
-import { useRouter } from 'next/navigation';
 import styled from 'styled-components';
 import Head from 'next/head';
 import ThemeProvider from 'context/ThemeProvider';
@@ -11,6 +9,7 @@ import Footer from 'components/common/Footer';
 import DarkModeBtn from 'components/Buttons/DarkModeBtn';
 import { GA_TRACKING_ID } from 'utils/gtag';
 import GoogleAnalytics from 'components/GoogleAnalytics';
+import StyledComponentsRegistry from 'lib/registry';
 
 declare global {
   interface Window {
@@ -95,14 +94,16 @@ export default function RootLayout({
         ></script>
       </Head>
       <GoogleAnalytics ga_id={GA_TRACKING_ID} />
-      <ThemeProvider>
-        <Wrapper>
-          <GlobalStyle />
-          <DarkModeBtn />
-          {children}
-          <Footer />
-        </Wrapper>
-      </ThemeProvider>
+      <StyledComponentsRegistry>
+        <ThemeProvider>
+          <Wrapper>
+            <GlobalStyle />
+            <DarkModeBtn />
+            {children}
+            <Footer />
+          </Wrapper>
+        </ThemeProvider>
+      </StyledComponentsRegistry>
     </html>
   );
 }
