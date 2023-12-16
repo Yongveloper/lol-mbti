@@ -1,4 +1,5 @@
 'use client';
+import { useEffect } from 'react';
 import styled from 'styled-components';
 import Head from 'next/head';
 import ThemeProvider from 'context/ThemeProvider';
@@ -48,6 +49,10 @@ export default function RootLayout({
   //     };
   //   }
   // }, [events]);
+
+  // useEffect(() => {
+  //   window.Kakao.init(process.env.NEXT_PUBLIC_KAKAO_API_KEY);
+  // }, []);
 
   return (
     <html lang="ko">
