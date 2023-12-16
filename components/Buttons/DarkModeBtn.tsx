@@ -10,8 +10,8 @@ const Wrapper = styled.div`
   margin-bottom: ${({ theme }) => theme.margin.base};
 `;
 
-const Button = styled.button<{ themeMode: string | undefined }>`
-  ${({ theme, themeMode }) => {
+const Button = styled.button<{ $themeMode: string | undefined }>`
+  ${({ theme, $themeMode }) => {
     return css`
       width: 80px;
       height: 30px;
@@ -31,13 +31,13 @@ const Button = styled.button<{ themeMode: string | undefined }>`
         transition: all 0.25s linear;
 
         &:first-child {
-          transform: ${themeMode === 'light'
+          transform: ${$themeMode === 'light'
             ? 'translateY(0)'
             : 'translateY(100px)'};
         }
 
         &:nth-child(2) {
-          transform: ${themeMode === 'light'
+          transform: ${$themeMode === 'light'
             ? 'translateY(-100px)'
             : 'translateY(0)'};
         }
@@ -50,7 +50,7 @@ const DarkModeBtn = () => {
   const [themeMode, switchMode] = useDarkMode();
   return (
     <Wrapper>
-      <Button themeMode={themeMode} onClick={switchMode}>
+      <Button $themeMode={themeMode} onClick={switchMode}>
         <SunnyIcon />
         <MoonIcon />
       </Button>

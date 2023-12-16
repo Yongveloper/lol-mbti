@@ -18,21 +18,21 @@ type Color =
   | 'black';
 
 const SButton = styled.button<{
-  bgColor: Color;
-  fontColor: Color;
-  borderColor: Color;
+  $bgColor: Color;
+  $fontColor: Color;
+  $borderColor: Color;
 }>`
-  ${({ theme, bgColor, fontColor, borderColor }) => {
+  ${({ theme, $bgColor, $fontColor, $borderColor }) => {
     return css`
       width: 100%;
       padding: ${theme.padding.small} ${theme.padding.base};
       margin-bottom: ${theme.margin.medium};
-      border: 2px solid ${theme.color[borderColor]};
+      border: 2px solid ${theme.color[$borderColor]};
       border-radius: 4px;
-      color: ${theme.color[fontColor]};
+      color: ${theme.color[$fontColor]};
       font-size: ${theme.font.size.small};
       font-family: ${theme.font.family.base};
-      background-color: ${theme.color[bgColor]};
+      background-color: ${theme.color[$bgColor]};
       cursor: pointer;
     `;
   }}
@@ -47,16 +47,23 @@ interface IButtonProps {
   name?: string;
 }
 
-const Button = ({ children, onClick, ...rest }: IButtonProps) => (
-  <SButton onClick={onClick} {...rest}>
+const Button = ({
+  children,
+  onClick,
+  bgColor = 'contentBackground',
+  fontColor = 'lightBlue',
+  borderColor = 'whiteBlue',
+  name,
+}: IButtonProps) => (
+  <SButton
+    onClick={onClick}
+    name={name}
+    $bgColor={bgColor}
+    $fontColor={fontColor}
+    $borderColor={borderColor}
+  >
     {children}
   </SButton>
 );
-
-Button.defaultProps = {
-  bgColor: 'contentBackground',
-  fontColor: 'lightBlue',
-  borderColor: 'whiteBlue',
-};
 
 export default Button;
