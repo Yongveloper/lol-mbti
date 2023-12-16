@@ -24,9 +24,7 @@ const SButton = styled(Button)`
 const ReplayBtn = () => {
   return (
     <SButton bgColor="lightBlue" fontColor="white" borderColor="lightBlue">
-      <Link href="/">
-        <a>테스트 하기</a>
-      </Link>
+      <Link href="/">테스트 하기</Link>
     </SButton>
   );
 };

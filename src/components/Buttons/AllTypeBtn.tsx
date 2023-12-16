@@ -25,7 +25,7 @@ const AllTypeBtn = () => {
   return (
     <SButton fontColor="laime" borderColor="laime">
       <Link href="/mbti">
-        <a>모든 유형 보러가기</a>
+       모든 유형 보러가기
       </Link>
     </SButton>
   );
