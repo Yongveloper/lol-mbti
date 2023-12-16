@@ -1,3 +1,5 @@
+'use client';
+
 import Content from 'components/common/Content';
 import Link from 'next/link';
 import styled, { css } from 'styled-components';
@@ -95,9 +97,7 @@ const Mbti = () => {
           <Ul key={index}>
             <Li>
               <Link href={`/mbti/${type}`}>
-                <a>
-                  <BoldText>{type}</BoldText> {types[type].position}
-                </a>
+                <BoldText>{type}</BoldText> {types[type].position}
               </Link>
             </Li>
           </Ul>

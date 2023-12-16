@@ -1,5 +1,4 @@
 'use client';
-import { useEffect } from 'react';
 import styled from 'styled-components';
 import Head from 'next/head';
 import ThemeProvider from 'context/ThemeProvider';
@@ -50,12 +49,8 @@ export default function RootLayout({
   //   }
   // }, [events]);
 
-  useEffect(() => {
-    window.Kakao.init(process.env.NEXT_PUBLIC_KAKAO_API_KEY);
-  }, []);
-
   return (
-    <html lang="en">
+    <html lang="ko">
       <Head>
         <meta
           name="google-site-verification"
@@ -93,17 +88,19 @@ export default function RootLayout({
           src="https://developers.kakao.com/sdk/js/kakao.min.js"
         ></script>
       </Head>
-      <GoogleAnalytics ga_id={GA_TRACKING_ID} />
-      <StyledComponentsRegistry>
-        <ThemeProvider>
-          <Wrapper>
-            <GlobalStyle />
-            <DarkModeBtn />
-            {children}
-            <Footer />
-          </Wrapper>
-        </ThemeProvider>
-      </StyledComponentsRegistry>
+      <body>
+        <GoogleAnalytics ga_id={GA_TRACKING_ID} />
+        <StyledComponentsRegistry>
+          <ThemeProvider>
+            <Wrapper>
+              <GlobalStyle />
+              <DarkModeBtn />
+              {children}
+              <Footer />
+            </Wrapper>
+          </ThemeProvider>
+        </StyledComponentsRegistry>
+      </body>
     </html>
   );
 }
