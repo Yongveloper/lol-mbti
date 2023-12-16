@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect } from 'react';
-import { useRouter } from 'next/router';
+import { useRouter } from 'next/navigation';
 import styled from 'styled-components';
 import Head from 'next/head';
 import ThemeProvider from 'context/ThemeProvider';
@@ -10,6 +10,7 @@ import { size } from 'styles/theme';
 import Footer from 'components/common/Footer';
 import DarkModeBtn from 'components/Buttons/DarkModeBtn';
 import { GA_TRACKING_ID } from 'utils/gtag';
+import GoogleAnalytics from 'components/GoogleAnalytics';
 
 declare global {
   interface Window {
@@ -34,21 +35,21 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  const router = useRouter();
+  // const { events } = useRouter();
 
-  useEffect(() => {
-    if (process.env.NODE_ENV === 'production') {
-      const handleRouteChange = (url: URL) => {
-        gtag.pageview(url);
-      };
-      router.events.on('routeChangeComplete', handleRouteChange);
-      router.events.on('hashChangeComplete', handleRouteChange);
-      return () => {
-        router.events.off('routeChangeComplete', handleRouteChange);
-        router.events.off('hashChangeComplete', handleRouteChange);
-      };
-    }
-  }, [router.events]);
+  // useEffect(() => {
+  //   if (process.env.NODE_ENV === 'production') {
+  //     const handleRouteChange = (url: URL) => {
+  //       gtag.pageview(url);
+  //     };
+  //     events.on('routeChangeComplete', handleRouteChange);
+  //     events.on('hashChangeComplete', handleRouteChange);
+  //     return () => {
+  //       events.off('routeChangeComplete', handleRouteChange);
+  //       events.off('hashChangeComplete', handleRouteChange);
+  //     };
+  //   }
+  // }, [events]);
 
   useEffect(() => {
     window.Kakao.init(process.env.NEXT_PUBLIC_KAKAO_API_KEY);
@@ -92,23 +93,8 @@ export default function RootLayout({
           defer
           src="https://developers.kakao.com/sdk/js/kakao.min.js"
         ></script>
-        <script
-          async
-          src={`https://www.googletagmanager.com/gtag/js?id=${GA_TRACKING_ID}`}
-        />
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-              window.dataLayer = window.dataLayer || [];
-              function gtag(){dataLayer.push(arguments);}
-              gtag('js', new Date());
-              gtag('config', '${GA_TRACKING_ID}', {
-                page_path: window.location.pathname,
-              });
-          `,
-          }}
-        />
       </Head>
+      <GoogleAnalytics ga_id={GA_TRACKING_ID} />
       <ThemeProvider>
         <Wrapper>
           <GlobalStyle />
