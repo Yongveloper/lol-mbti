@@ -1,6 +1,8 @@
+'use client';
+
 import Head from 'next/head';
 import { useState } from 'react';
-import { MainView, QuestionView } from 'src/components/Home';
+import { MainView, QuestionView } from 'components/Home';
 
 export default function Home() {
   const [start, setStart] = useState(false);

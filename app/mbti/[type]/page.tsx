@@ -2,14 +2,14 @@ import { useRef } from 'react';
 import { GetStaticProps, GetStaticPropsContext } from 'next';
 import Head from 'next/head';
 import styled, { css } from 'styled-components';
-import Content from 'src/components/common/Content';
-import types from 'src/data/result';
-import ContentList from 'src/components/Mbti/ContentList';
-import KakaoBtn from 'src/components/Buttons/KakaoBtn';
-import CopyBtn from 'src/components/Buttons/CopyBtn';
-import ReplayBtn from 'src/components/Buttons/ReplayBtn';
-import AllTypeBtn from 'src/components/Buttons/AllTypeBtn';
-import SaveImageBtn from 'src/components/Buttons/SaveImageBtn';
+import Content from 'components/common/Content';
+import types from 'data/result';
+import ContentList from 'components/Mbti/ContentList';
+import KakaoBtn from 'components/Buttons/KakaoBtn';
+import CopyBtn from 'components/Buttons/CopyBtn';
+import ReplayBtn from 'components/Buttons/ReplayBtn';
+import AllTypeBtn from 'components/Buttons/AllTypeBtn';
+import SaveImageBtn from 'components/Buttons/SaveImageBtn';
 
 const SContent = styled(Content)`
   ${({ theme }) => {

@@ -5,7 +5,7 @@ import {
   LS_KEY,
   Theme,
   ThemeContext,
-} from 'src/context/ThemeProvider';
+} from 'context/ThemeProvider';
 
 const useDarkMode = (): [string | undefined, () => void] => {
   const { themeMode, setThemeMode } = useContext(ThemeContext) as Theme;

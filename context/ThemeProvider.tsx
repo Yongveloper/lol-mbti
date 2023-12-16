@@ -1,4 +1,4 @@
-import { lightTheme, darkTheme } from '../../styles/theme';
+import { lightTheme, darkTheme } from '../styles/theme';
 import { createContext, useEffect, useState } from 'react';
 import { ThemeProvider as StyledProvider } from 'styled-components';
 

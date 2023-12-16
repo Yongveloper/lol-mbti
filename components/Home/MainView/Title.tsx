@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components';
-import Content from 'src/components/common/Content';
+import Content from 'components/common/Content';
 
 import Image from 'next/image';
 import topIcon from 'public/images/position/top.png';

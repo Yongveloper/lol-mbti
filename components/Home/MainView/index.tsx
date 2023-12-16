@@ -1,8 +1,8 @@
-import Button from 'src/components/common/Button';
-import CopyBtn from 'src/components/Buttons/CopyBtn';
-import KakaoBtn from 'src/components/Buttons/KakaoBtn';
+import Button from 'components/common/Button';
+import CopyBtn from 'components/Buttons/CopyBtn';
+import KakaoBtn from 'components/Buttons/KakaoBtn';
 import Title from './Title';
-import AllTypeBtn from 'src/components/Buttons/AllTypeBtn';
+import AllTypeBtn from 'components/Buttons/AllTypeBtn';
 
 interface IMainViewProps {
   startHandler: () => void;

@@ -1,11 +1,11 @@
 import { useState } from 'react';
-import Button from 'src/components/common/Button';
-import Content from 'src/components/common/Content';
-import { questions } from 'src/data/questions';
+import Button from 'components/common/Button';
+import Content from 'components/common/Content';
+import { questions } from 'data/questions';
 import styled, { css } from 'styled-components';
 import PrevNextBtn from './PrevNextBtn';
 import Progressbar from './Progressbar';
-import LoadingModal from 'src/components/common/LoadingModal';
+import LoadingModal from 'components/common/LoadingModal';
 import { useRouter } from 'next/router';
 
 const QuestionText = styled.p`

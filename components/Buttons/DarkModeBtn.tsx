@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components';
-import useDarkMode from 'src/hooks/useDarkMode';
+import useDarkMode from 'hooks/useDarkMode';
 import SunnyIcon from 'public/images/sunny.svg';
 import MoonIcon from 'public/images/moon.svg';
 

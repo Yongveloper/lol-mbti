@@ -1,11 +1,11 @@
-import Content from 'src/components/common/Content';
+import Content from 'components/common/Content';
 import Link from 'next/link';
 import styled, { css } from 'styled-components';
-import types from 'src/data/result';
+import types from 'data/result';
 import Head from 'next/head';
-import ReplayBtn from 'src/components/Buttons/ReplayBtn';
-import KakaoBtn from 'src/components/Buttons/KakaoBtn';
-import CopyBtn from 'src/components/Buttons/CopyBtn';
+import ReplayBtn from 'components/Buttons/ReplayBtn';
+import KakaoBtn from 'components/Buttons/KakaoBtn';
+import CopyBtn from 'components/Buttons/CopyBtn';
 
 const Ul = styled.ul``;
 
