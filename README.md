@@ -20,20 +20,34 @@
 
 ## ❗ What I Earned
 
-- 개발 전 <b>와이어프레임</b>, <b>기능명세서</b> 작성의 필요성
-- 기능 단위 <b>Issue</b> 작성 후 <b>Issue 단위</b>로 개발 진행
-- 컴포넌트 <b>구조 설계</b>하기
-- <b>함수형 컴포넌트</b>의 사용
-- <b>반응형</b> 웹 디자인 적용
-- <b>useState</b>와 <b>useEffect</b> 사용
-- <b>TypeScript</b> 기본적인 사용 및 이해
-- Next.js의 <b>getStaticProps</b>에 대한 <storng>SSG</b> 이해
-- <b>SEO 최적화</b>
-- <b>Styled-Component</b> 사용 및 이해
-- <b>ThemProvider</b>를 이용한 다크모드 지원
-- <b>Google Analytics</b> 적용
-- <b>오픈 API(카카오톡 공유)</b> 적용 및 이해
-- <b>html2canvas</b> + <b>file-saver</b>로 DOM 캡쳐, 저장 기능 구현 및 이해
+- 개발 전 **와이어프레임**, **기능명세서** 작성의 필요성
+- 기능 단위 **Issue** 작성 후 **Issue 단위**로 개발 진행
+- 컴포넌트 **구조 설계**하기
+- **함수형 컴포넌트**의 사용
+- **반응형** 웹 디자인 적용
+- **useState**와 **useEffect** 사용
+- **TypeScript** 기본적인 사용 및 이해
+- Next.js의 **getStaticProps**에 대한 **SSG** 이해
+- **SEO 최적화**
+- **Styled-Component** 사용 및 이해
+- **ThemProvider**를 이용한 다크모드 지원
+- **Google Analytics** 적용
+- **오픈 API(카카오톡 공유)** 적용 및 이해
+- **html2canvas** + **file-saver**로 DOM 캡쳐, 저장 기능 구현 및 이해
+
+### ✅ Next.js 11 -> 14 마이그레이션 (2024년 12월 18일)
+
+- 관련 종속성 업데이트
+  - React 17.0.2 -> 18.2.0
+  - styled-components 5.3.0 -> 6.1.1
+  - TypeScript 4.3.5 -> 4.5.2
+- Link 태그 하위 태그로 a태그 있던 것 제거
+- 최신 app router 구조로 변경
+  - 구글 애널리틱스 코드 변경
+  - styled-components 코드 변경
+  - 카카오톡 공유하기 코드 변경
+- getStaticProps -> generateStaticParams
+- metadata 적용법 변경
 
 ## 🌟 주요 기능 및 페이지
 
