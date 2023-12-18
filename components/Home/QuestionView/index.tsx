@@ -6,7 +6,7 @@ import styled, { css } from 'styled-components';
 import PrevNextBtn from './PrevNextBtn';
 import Progressbar from './Progressbar';
 import LoadingModal from 'components/common/LoadingModal';
-import { useRouter } from 'next/router';
+import { useRouter } from 'next/navigation';
 
 const QuestionText = styled.p`
   width: 100%;
@@ -58,7 +58,7 @@ const getResult = (selected: string[]): string => {
 };
 
 const QuestionView = () => {
-  const router = useRouter();
+  const { push } = useRouter();
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [completed, setCompleted] = useState(0);
   const [loading, setLoading] = useState(false);
@@ -109,7 +109,7 @@ const QuestionView = () => {
 
   const pushToMbtiType = () => {
     const mbtiType = getResult(selected);
-    setTimeout(() => router.push(`/mbti/${mbtiType}`), 2500);
+    setTimeout(() => push(`/mbti/${mbtiType}`), 2500);
   };
 
   return (
