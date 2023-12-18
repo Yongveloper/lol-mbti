@@ -1,6 +1,5 @@
 'use client';
 import { useRef } from 'react';
-import Head from 'next/head';
 import styled, { css } from 'styled-components';
 import Content from 'components/common/Content';
 import types from 'data/result';
@@ -72,46 +71,41 @@ const Type = ({ type }: ITypeProps) => {
   const resultRef = useRef<HTMLDivElement>(null);
 
   return (
-    <>
-      <Head>
-        <link rel="canonical" href="https://lol-mbti.vercel.app/mbti" />
-      </Head>
-      <main>
-        <div ref={resultRef}>
-          <SContent>
-            <Div>
-              {type}
-              <h2>
-                {position}
-                <PositionText>{subPosition}</PositionText>
-              </h2>
-              <PositionImg src={image} role="img" />
-            </Div>
-            <Div>
-              <ContentList content={content} />
-              <BoldText>
-                {type} {subPosition}이(가) 주의할 점:
-              </BoldText>
-              <p>{note}</p>
-            </Div>
-            <Div>
-              <BoldText>혹시 평소 MBTI와 다른가요?</BoldText>
-              <p>
-                롤을 할 때는 다른 인격이 나올 수 있어요!
-                <br />
-                결과의 라인대로 한번 플레이를 해보는 건 어떨까요!?
-                <br />* 유형의 포지션은 추천 포지션입니다!
-              </p>
-            </Div>
-          </SContent>
-        </div>
-        <ReplayBtn />
-        <SaveImageBtn divRef={resultRef} />
-        <KakaoBtn />
-        <CopyBtn />
-        <AllTypeBtn />
-      </main>
-    </>
+    <main>
+      <div ref={resultRef}>
+        <SContent>
+          <Div>
+            {type}
+            <h2>
+              {position}
+              <PositionText>{subPosition}</PositionText>
+            </h2>
+            <PositionImg src={image} role="img" />
+          </Div>
+          <Div>
+            <ContentList content={content} />
+            <BoldText>
+              {type} {subPosition}이(가) 주의할 점:
+            </BoldText>
+            <p>{note}</p>
+          </Div>
+          <Div>
+            <BoldText>혹시 평소 MBTI와 다른가요?</BoldText>
+            <p>
+              롤을 할 때는 다른 인격이 나올 수 있어요!
+              <br />
+              결과의 라인대로 한번 플레이를 해보는 건 어떨까요!?
+              <br />* 유형의 포지션은 추천 포지션입니다!
+            </p>
+          </Div>
+        </SContent>
+      </div>
+      <ReplayBtn />
+      <SaveImageBtn divRef={resultRef} />
+      <KakaoBtn />
+      <CopyBtn />
+      <AllTypeBtn />
+    </main>
   );
 };
 
