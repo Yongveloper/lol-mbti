@@ -71,11 +71,7 @@ interface ITypeProps {
   type: string;
 }
 
-const Type = ({ type }: any) => {
-  //   console.log(params);
-
-  //   const { type } = params;
-
+const Type = ({ type }: ITypeProps) => {
   const contents = types[type];
   const { position: positions, image, content, note } = contents;
   const position = positions[0];
@@ -85,18 +81,6 @@ const Type = ({ type }: any) => {
   return (
     <>
       <Head>
-        <title>{`${type} : ${position}${subPosition}`}</title>
-        <meta
-          property="og:title"
-          content={`${type} : ${position}${subPosition}`}
-        />
-        <meta
-          property="og:image"
-          content={`https://lol-mbti.vercel.app${image}`}
-        />
-        <meta property="og:image:alt" content="롤에서 알아보는 MBTI" />
-        <meta property="og:image:width" content="1200" />
-        <meta property="og:image:height" content="627" />
         <link rel="canonical" href="https://lol-mbti.vercel.app/mbti" />
       </Head>
       <main>
