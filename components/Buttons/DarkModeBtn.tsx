@@ -51,7 +51,11 @@ const DarkModeBtn = () => {
   const [themeMode, switchMode] = useDarkMode();
   return (
     <Wrapper>
-      <Button $themeMode={themeMode} onClick={switchMode}>
+      <Button
+        $themeMode={themeMode}
+        onClick={switchMode}
+        aria-label="DarkModeBtn"
+      >
         <SunnyIcon />
         <MoonIcon />
       </Button>
