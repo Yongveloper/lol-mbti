@@ -25,6 +25,9 @@ const SButton = styled.button<{
 }>`
   ${({ theme, $bgColor, $fontColor, $borderColor }) => {
     return css`
+      display: flex;
+      justify-content: center;
+      align-items: center;
       width: 100%;
       padding: ${theme.padding.small} ${theme.padding.base};
       margin-bottom: ${theme.margin.medium};
