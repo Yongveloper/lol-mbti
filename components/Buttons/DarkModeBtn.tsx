@@ -2,6 +2,7 @@ import styled, { css } from 'styled-components';
 import useDarkMode from 'hooks/useDarkMode';
 import SunnyIcon from 'public/images/sunny.svg';
 import MoonIcon from 'public/images/moon.svg';
+import { THEME_MODE } from 'context/ThemeProvider';
 
 const Wrapper = styled.div`
   width: 100%;
@@ -31,13 +32,13 @@ const Button = styled.button<{ $themeMode: string | undefined }>`
         transition: all 0.25s linear;
 
         &:first-child {
-          transform: ${$themeMode === 'light'
+          transform: ${$themeMode === THEME_MODE.LIGHT
             ? 'translateY(0)'
             : 'translateY(100px)'};
         }
 
         &:nth-child(2) {
-          transform: ${$themeMode === 'light'
+          transform: ${$themeMode === THEME_MODE.LIGHT
             ? 'translateY(-100px)'
             : 'translateY(0)'};
         }

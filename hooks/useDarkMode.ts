@@ -1,22 +1,16 @@
-import { useCallback, useEffect, useContext } from 'react';
-import {
-  DARK,
-  LIGHT,
-  LS_KEY,
-  Theme,
-  ThemeContext,
-} from 'context/ThemeProvider';
+import { useCallback, useContext } from 'react';
+import { THEME_MODE, Theme, ThemeContext } from 'context/ThemeProvider';
 
-const useDarkMode = (): [string | undefined, () => void] => {
+const useDarkMode = (): [string, () => void] => {
   const { themeMode, setThemeMode } = useContext(ThemeContext) as Theme;
 
   const switchTheme = useCallback(() => {
-    if (themeMode === LIGHT) {
-      localStorage.setItem(LS_KEY, DARK);
-      setThemeMode(DARK);
+    if (themeMode === THEME_MODE.LIGHT) {
+      localStorage.setItem(THEME_MODE.LS_KEY, THEME_MODE.DARK);
+      setThemeMode(THEME_MODE.DARK);
     } else {
-      localStorage.setItem(LS_KEY, LIGHT);
-      setThemeMode(LIGHT);
+      localStorage.setItem(THEME_MODE.LS_KEY, THEME_MODE.LIGHT);
+      setThemeMode(THEME_MODE.LIGHT);
     }
   }, [themeMode, setThemeMode]);
 
