@@ -28,15 +28,8 @@ const Div = styled.div`
       justify-content: center;
       padding: ${theme.padding.base} 0;
       line-height: 1.5;
-      :not(:last-child) {
-        border-bottom: 3px solid ${theme.color.borderColor};
-      }
 
-      p {
-        :not(:last-child) {
-          margin-bottom: ${theme.margin.base};
-        }
-      }
+      border-bottom: 3px solid ${theme.color.borderColor};
     `;
   }}
 `;

@@ -3,13 +3,13 @@ import styled from 'styled-components';
 const Ul = styled.ul`
   margin-bottom: ${({ theme }) => theme.margin.base};
   text-align: left;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: ${({ theme }) => theme.margin.base};
 `;
 
-const Li = styled.li`
-  :not(:last-child) {
-    margin-bottom: ${({ theme }) => theme.margin.base};
-  }
-`;
+const Li = styled.li``;
 
 interface IContentListProps {
   content: Array<string>;
