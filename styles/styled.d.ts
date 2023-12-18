@@ -44,9 +44,6 @@ declare module 'styled-components' {
     };
 
     font: {
-      family: {
-        base: string;
-      };
       size: {
         xLarge: string;
         large: string;

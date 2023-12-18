@@ -1,4 +1,5 @@
 import styled, { css } from 'styled-components';
+import { notoSansKr } from 'styles/GlobalStyle';
 
 type Color =
   | 'contentBackground'
@@ -31,7 +32,7 @@ const SButton = styled.button<{
       border-radius: 4px;
       color: ${theme.color[$fontColor]};
       font-size: ${theme.font.size.small};
-      font-family: ${theme.font.family.base};
+      font-family: ${notoSansKr.style.fontFamily};
       background-color: ${theme.color[$bgColor]};
       cursor: pointer;
     `;

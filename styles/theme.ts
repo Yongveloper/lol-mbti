@@ -1,7 +1,3 @@
-import '@fontsource/noto-sans-kr/400.css';
-import '@fontsource/noto-sans-kr/500.css';
-import '@fontsource/noto-sans-kr/700.css';
-
 export const size = {
   pc: '1200px',
   tab: '900px',
@@ -46,9 +42,6 @@ const color = {
 };
 
 const font = {
-  family: {
-    base: `"Noto Sans KR", sans-serif`,
-  },
   size: {
     xLarge: '48px',
     large: '36px',
