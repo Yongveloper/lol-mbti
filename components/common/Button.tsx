@@ -40,9 +40,9 @@ const SButton = styled.button<{
 
 interface IButtonProps {
   children: React.ReactNode;
-  bgColor: Color;
-  fontColor: Color;
-  borderColor: Color;
+  bgColor?: Color;
+  fontColor?: Color;
+  borderColor?: Color;
   onClick?: (event: React.MouseEvent<HTMLElement>) => any;
   name?: string;
 }
