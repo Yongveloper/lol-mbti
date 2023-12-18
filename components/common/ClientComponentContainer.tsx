@@ -1,5 +1,4 @@
 'use client';
-
 import styled from 'styled-components';
 import ThemeProvider from 'context/ThemeProvider';
 import GlobalStyle from 'styles/GlobalStyle';

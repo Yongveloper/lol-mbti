@@ -9,15 +9,19 @@ const SButton = styled(Button)`
 `;
 
 const KakaoBtn = () => {
-  const onClick = () => {
+  const handleShearToKakao = () => {
     const { Kakao, location } = window;
-    Kakao.Link.sendScrap({
+    Kakao.Share.sendScrap({
       requestUrl: location.href,
     });
   };
 
   return (
-    <SButton fontColor="yellow" borderColor="whiteYellow" onClick={onClick}>
+    <SButton
+      fontColor="yellow"
+      borderColor="whiteYellow"
+      onClick={handleShearToKakao}
+    >
       <KakaoIcon viewBox="0 0 60 48" width="30px" height="23px" />
       카카오톡 공유하기
     </SButton>

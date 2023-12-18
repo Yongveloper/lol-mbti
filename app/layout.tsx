@@ -1,8 +1,8 @@
 import { Metadata } from 'next';
-import Head from 'next/head';
 import { GA_TRACKING_ID } from 'utils/gtag';
 import GoogleAnalytics from 'components/GoogleAnalytics';
 import ClientComponentContainer from 'components/common/ClientComponentContainer';
+import KakaoScript from 'components/common/KakaoScript';
 
 declare global {
   interface Window {
@@ -46,38 +46,13 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  // const { events } = useRouter();
-
-  // useEffect(() => {
-  //   if (process.env.NODE_ENV === 'production') {
-  //     const handleRouteChange = (url: URL) => {
-  //       gtag.pageview(url);
-  //     };
-  //     events.on('routeChangeComplete', handleRouteChange);
-  //     events.on('hashChangeComplete', handleRouteChange);
-  //     return () => {
-  //       events.off('routeChangeComplete', handleRouteChange);
-  //       events.off('hashChangeComplete', handleRouteChange);
-  //     };
-  //   }
-  // }, [events]);
-
-  // useEffect(() => {
-  //   window.Kakao.init(process.env.NEXT_PUBLIC_KAKAO_API_KEY);
-  // }, []);
-
   return (
     <html lang="ko">
-      <Head>
-        <script
-          defer
-          src="https://developers.kakao.com/sdk/js/kakao.min.js"
-        ></script>
-      </Head>
       <body>
         <GoogleAnalytics ga_id={GA_TRACKING_ID} />
         <ClientComponentContainer>{children}</ClientComponentContainer>
       </body>
+      <KakaoScript />
     </html>
   );
 }
