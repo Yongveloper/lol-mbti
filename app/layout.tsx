@@ -1,13 +1,12 @@
 import { Metadata } from 'next';
-import { GA_TRACKING_ID } from 'utils/gtag';
-import GoogleAnalytics from 'components/GoogleAnalytics';
-import ClientComponentContainer from 'components/common/ClientComponentContainer';
-import KakaoScript from 'components/common/KakaoScript';
+import ClientComponentContainer from 'app/ClientComponentContainer';
+import GoogleAnalytics from 'app/GoogleAnalytics';
+import KakaoScript from 'app/KakaoScript';
 
 declare global {
   interface Window {
-    Kakao: any;
     gtag: any;
+    Kakao: any;
   }
 }
 
@@ -49,7 +48,7 @@ export default function RootLayout({
   return (
     <html lang="ko">
       <body>
-        <GoogleAnalytics ga_id={GA_TRACKING_ID} />
+        <GoogleAnalytics />
         <ClientComponentContainer>{children}</ClientComponentContainer>
       </body>
       <KakaoScript />

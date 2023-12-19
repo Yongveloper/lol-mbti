@@ -1,5 +1,5 @@
 import { Metadata } from 'next';
-import Mbti from 'components/Mbti/Mbti';
+import Mbti from 'app/mbti/Mbti';
 
 export const metadata: Metadata = {
   robots: 'index, follow',

@@ -6,7 +6,6 @@ import Footer from 'components/common/Footer';
 import DarkModeBtn from 'components/Buttons/DarkModeBtn';
 import StyledComponentsRegistry from 'lib/registry';
 import { size } from 'styles/theme';
-
 const Wrapper = styled.div`
   width: 100%;
   max-width: ${size.mobile};
