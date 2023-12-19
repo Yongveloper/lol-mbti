@@ -43,10 +43,12 @@
   - TypeScript 4.3.5 -> 4.5.2
 - Link 태그 하위 태그로 a태그 있던 것 제거
 - 최신 app router 구조로 변경
+  - styled-components 적용 로직 추가
   - 구글 애널리틱스 코드 변경
   - styled-components 코드 변경
   - 카카오톡 공유하기 코드 변경
 - getStaticProps -> generateStaticParams
+- 폰트 최적화: @fontsource -> next/font
 - metadata 적용법 변경
 
 ## 🌟 주요 기능 및 페이지
