@@ -47,18 +47,6 @@ const Li = styled.li`
         transform: translateY(-4px);
         transition: transform 0.1s linear;
       }
-      a {
-        width: 100%;
-      }
-      a:only-child::after {
-        position: absolute;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        left: 0;
-        background: transparent;
-        content: '';
-      }
     `;
   }}
 `;
@@ -76,11 +64,11 @@ const Mbti = () => {
         <H2>모든 유형과 추천 포지션을 한 눈에 확인해보세요!</H2>
         {mbtiTypes.map((type, index) => (
           <Ul key={index}>
-            <Li>
-              <Link href={`/mbti/${type}`}>
+            <Link href={`/mbti/${type}`}>
+              <Li>
                 <BoldText>{type}</BoldText> {types[type].position}
-              </Link>
-            </Li>
+              </Li>
+            </Link>
           </Ul>
         ))}
       </Content>

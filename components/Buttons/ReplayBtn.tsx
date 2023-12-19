@@ -7,25 +7,15 @@ const SButton = styled(Button)`
   justify-content: center;
   align-items: center;
   position: relative;
-  a {
-    width: 100%;
-  }
-  a:only-child::after {
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    background: transparent;
-    content: '';
-  }
 `;
 
 const ReplayBtn = () => {
   return (
-    <SButton bgColor="lightBlue" fontColor="white" borderColor="lightBlue">
-      <Link href="/">테스트 하기</Link>
-    </SButton>
+    <Link href="/">
+      <SButton bgColor="lightBlue" fontColor="white" borderColor="lightBlue">
+        테스트 하기
+      </SButton>
+    </Link>
   );
 };
 
