@@ -105,12 +105,12 @@ NEXT_PUBLIC_KAKAO_API_KEY=카카오 API Key
 ## 2. 개발 환경 실행
 
 ```
-npm run dev
+yarn dev
 ```
 
 ## 3. 배포 환경 실행
 
 ```
-1. npm run build
-2. npm start
+1. yarn build
+2. yarn start
 ```
