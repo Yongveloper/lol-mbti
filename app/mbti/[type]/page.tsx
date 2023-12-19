@@ -61,7 +61,7 @@ export async function generateMetadata(
   };
 }
 
-const Page = ({ params }: any) => {
+const Page = ({ params }: { params: { type: string } }) => {
   return <Type type={params.type} />;
 };
 
