@@ -47,7 +47,7 @@
   - 구글 애널리틱스 코드 변경
   - styled-components 코드 변경
   - 카카오톡 공유하기 코드 변경
-- getStaticProps -> generateStaticParams
+- getStaticPaths -> generateStaticParams
 - 폰트 최적화: @fontsource -> next/font
 - metadata 적용법 변경
 
