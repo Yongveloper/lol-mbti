@@ -13,4 +13,14 @@ module.exports = {
     // ssr and displayName are configured by default
     styledComponents: true,
   },
+  experimental: {
+    turbo: {
+      rules: {
+        '*.svg': {
+          loaders: ['@svgr/webpack'],
+          as: '*.js',
+        },
+      },
+    },
+  },
 };
