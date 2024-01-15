@@ -1,6 +1,8 @@
 import styled from 'styled-components';
 
-const Container = styled.div`
+const Container = styled.div<{ $width: string; $height: string }>`
+  width: ${({ $width }) => $width};
+  height: ${({ $height }) => $height};
   margin-bottom: ${({ theme }) => theme.margin.base};
 `;
 
@@ -13,7 +15,7 @@ interface IKaKaoAdFitProps {
 const KakaoAdfit = ({ width, height, unit }: IKaKaoAdFitProps) => {
   return (
     <>
-      <Container>
+      <Container $width={width} $height={height}>
         <ins
           className="kakao_ad_area"
           style={{ display: 'none' }}
