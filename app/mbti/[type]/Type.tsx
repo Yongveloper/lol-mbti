@@ -27,8 +27,9 @@ const Div = styled.div`
       justify-content: center;
       padding: ${theme.padding.base} 0;
       line-height: 1.5;
-
-      border-bottom: 3px solid ${theme.color.borderColor};
+      &:not(:last-child) {
+        border-bottom: 3px solid ${theme.color.borderColor};
+        }
     `;
   }}
 `;
