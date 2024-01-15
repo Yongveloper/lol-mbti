@@ -13,7 +13,7 @@ const KakaoBtn = () => {
   return (
     <Button
       fontColor="yellow"
-      borderColor="whiteYellow"
+      borderColor="yellow"
       onClick={handleShearToKakao}
     >
       <KakaoIcon viewBox="0 0 60 48" width="30px" height="23px" />
