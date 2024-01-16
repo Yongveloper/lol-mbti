@@ -1,62 +1,47 @@
-import { useState } from 'react';
+import { useReducer, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { questions } from 'data/questions';
 import { getResult } from 'utils/getResult';
+import {
+  QUESTIONNAIRE_ACTIONS,
+  initialState,
+  questionnaireReducer,
+} from 'reducers/questionnaireReducer';
 
 const useQuestionnaire = () => {
   const { push } = useRouter();
-  const [currentQuestion, setCurrentQuestion] = useState(0);
-  const [completed, setCompleted] = useState(0);
   const [loading, setLoading] = useState(false);
-  const [selected, setSelected] = useState<string[]>([]);
+  const [state, dispatch] = useReducer(questionnaireReducer, initialState);
+  const { currentQuestion, completed, selected } = state;
   const prevDisabled = currentQuestion === 0;
   const nextDisabled =
     completed === currentQuestion || currentQuestion === questions.length - 1;
 
   const onAnswerClick = (event: React.MouseEvent<HTMLElement>) => {
-    const type = event.currentTarget.getAttribute('name');
-
-    if (!type) {
-      return;
+    const MBTIType = event.currentTarget.getAttribute('name');
+    if (MBTIType) {
+      dispatch({ type: QUESTIONNAIRE_ACTIONS.ANSWER, answer: MBTIType });
     }
-
-    if (currentQuestion < questions.length - 1) {
-      setCurrentQuestion((prev) => prev + 1);
-    }
-
-    if (
-      currentQuestion === completed &&
-      currentQuestion <= questions.length - 1
-    ) {
-      setCompleted((prev) => prev + 1);
-    }
-
-    const selectedArray = [...selected];
-    selectedArray[currentQuestion] = type;
-    setSelected(selectedArray);
   };
 
   const onPrevClick = () => {
-    if (!prevDisabled) {
-      setCurrentQuestion((prev) => prev - 1);
-    }
+    dispatch({ type: QUESTIONNAIRE_ACTIONS.PREV });
   };
 
   const onNextClick = () => {
-    if (!nextDisabled) {
-      setCurrentQuestion((prev) => prev + 1);
-    }
+    dispatch({ type: QUESTIONNAIRE_ACTIONS.NEXT });
+  };
+
+  const pushToMBTIType = () => {
+    const MBTIType = getResult(selected);
+    setTimeout(() => push(`/mbti/${MBTIType}`), 2500);
   };
 
   const onResultClick = () => {
-    if (completed !== questions.length) return;
-    setLoading(true);
-    pushToMbtiType();
-  };
-
-  const pushToMbtiType = () => {
-    const mbtiType = getResult(selected);
-    setTimeout(() => push(`/mbti/${mbtiType}`), 2500);
+    if (completed === questions.length) {
+      setLoading(true);
+      pushToMBTIType();
+    }
   };
 
   return {
