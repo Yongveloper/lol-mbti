@@ -7,6 +7,7 @@ import PrevNextBtn from './PrevNextBtn';
 import Progressbar from './Progressbar';
 import LoadingModal from 'components/common/LoadingModal';
 import { useRouter } from 'next/navigation';
+import useQuestionnaire from 'hooks/useQuestionnaire';
 
 const QuestionText = styled.p`
   width: 100%;
@@ -30,87 +31,20 @@ const ResultButton = styled(Button)<{ completed: boolean }>`
   cursor: ${({ completed }) => !completed && 'not-allowed'};
   transition: opacity 0.1s ease-in-out;
 `;
-interface MbtiType {
-  [key: string]: number;
-}
-
-const getResult = (selected: string[]): string => {
-  const mbti: MbtiType = {
-    E: 0,
-    I: 0,
-    S: 0,
-    N: 0,
-    T: 0,
-    F: 0,
-    J: 0,
-    P: 0,
-  };
-  const mbtiTypes = Object.keys(mbti);
-
-  selected.forEach((type) => {
-    const selectedType = type[0];
-    mbti[selectedType]++;
-  });
-
-  const result = mbtiTypes.filter((type) => mbti[type] >= 2).join('');
-
-  return result;
-};
 
 const QuestionView = () => {
-  const { push } = useRouter();
-  const [currentQuestion, setCurrentQuestion] = useState(0);
-  const [completed, setCompleted] = useState(0);
-  const [loading, setLoading] = useState(false);
-  const [selected, setSelected] = useState<string[]>([]);
-  const prevDisabled = currentQuestion === 0;
-  const nextDisabled =
-    completed === currentQuestion || currentQuestion === questions.length - 1; // 응답 완료한 개수와 현재 진행중인 질문이 같거나, 현재 진행중인 질문이 마지막 질문일 경우
-
-  const onAnswerClick = (event: React.MouseEvent<HTMLElement>) => {
-    const type = event.currentTarget.getAttribute('name');
-    if (!type) {
-      return;
-    }
-
-    if (currentQuestion < questions.length - 1) {
-      setCurrentQuestion((prev) => prev + 1);
-    }
-
-    if (
-      currentQuestion === completed &&
-      currentQuestion <= questions.length - 1
-    ) {
-      setCompleted((prev) => prev + 1);
-    }
-
-    const selectedArray = [...selected];
-    selectedArray[currentQuestion] = type;
-    setSelected(selectedArray);
-  };
-
-  const onPrevClick = () => {
-    if (!prevDisabled) {
-      setCurrentQuestion((prev) => prev - 1);
-    }
-  };
-
-  const onNextClick = () => {
-    if (!nextDisabled) {
-      setCurrentQuestion((prev) => prev + 1);
-    }
-  };
-
-  const onResultClick = () => {
-    if (completed !== questions.length) return;
-    setLoading(true);
-    pushToMbtiType();
-  };
-
-  const pushToMbtiType = () => {
-    const mbtiType = getResult(selected);
-    setTimeout(() => push(`/mbti/${mbtiType}`), 2500);
-  };
+  const {
+    currentQuestion,
+    onAnswerClick,
+    selected,
+    completed,
+    onResultClick,
+    loading,
+    prevDisabled,
+    nextDisabled,
+    onPrevClick,
+    onNextClick,
+  } = useQuestionnaire();
 
   return (
     <>
