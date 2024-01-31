@@ -1,9 +1,12 @@
+const { createVanillaExtractPlugin } = require('@vanilla-extract/next-plugin');
+const withVanillaExtract = createVanillaExtractPlugin();
+
 const withBundleAnalyzer = require('@next/bundle-analyzer')({
   enabled: process.env.ANALYZE === 'true',
 });
 
-module.exports = withBundleAnalyzer({
-  output: 'export',
+const nextConfig = {
+  // output: 'export',
   reactStrictMode: true,
   webpack(config) {
     config.module.rules.push({
@@ -27,4 +30,6 @@ module.exports = withBundleAnalyzer({
       },
     },
   },
-});
+};
+
+module.exports = withBundleAnalyzer(withVanillaExtract(nextConfig));
