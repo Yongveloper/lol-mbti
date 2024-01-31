@@ -19,6 +19,7 @@
     "styled-reset": "^4.3.4"
   },
   "devDependencies": {
+    "@next/bundle-analyzer": "^14.1.0",
     "@svgr/webpack": "^5.5.0",
     "@types/file-saver": "^2.0.5",
     "@types/node": "20.10.4",
