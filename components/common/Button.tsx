@@ -1,5 +1,6 @@
-import styled, { css } from 'styled-components';
-import { notoSansKr } from 'styles/GlobalStyle';
+import { global } from 'styles/globalTheme.css';
+import { assignInlineVars } from '@vanilla-extract/dynamic';
+import * as style from './button.css';
 
 type Color =
   | 'contentBackground'
@@ -7,7 +8,7 @@ type Color =
   | 'whiteYellow'
   | 'yellow'
   | 'whiteBlue'
-  | 'bluePuple'
+  | 'bluePurple'
   | 'lightBlue'
   | 'lightGray'
   | 'whiteGray'
@@ -17,30 +18,6 @@ type Color =
   | 'pink'
   | 'red'
   | 'black';
-
-const SButton = styled.button<{
-  $bgColor: Color;
-  $fontColor: Color;
-  $borderColor: Color;
-}>`
-  ${({ theme, $bgColor, $fontColor, $borderColor }) => {
-    return css`
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      width: 100%;
-      padding: ${theme.padding.small} ${theme.padding.base};
-      margin-bottom: ${theme.margin.medium};
-      border: 2px solid ${theme.color[$borderColor]};
-      border-radius: 4px;
-      color: ${theme.color[$fontColor]};
-      font-size: ${theme.font.size.small};
-      font-family: ${notoSansKr.style.fontFamily};
-      background-color: ${theme.color[$bgColor]};
-      cursor: pointer;
-    `;
-  }}
-`;
 
 interface IButtonProps {
   children: React.ReactNode;
@@ -59,15 +36,18 @@ const Button = ({
   borderColor = 'whiteBlue',
   name,
 }: IButtonProps) => (
-  <SButton
+  <button
+    className={style.button}
+    style={assignInlineVars({
+      [style.backgroundColor]: global.color[bgColor],
+      [style.fontColor]: global.color[fontColor],
+      [style.borderColor]: global.color[borderColor],
+    })}
     onClick={onClick}
     name={name}
-    $bgColor={bgColor}
-    $fontColor={fontColor}
-    $borderColor={borderColor}
   >
     {children}
-  </SButton>
+  </button>
 );
 
 export default Button;

@@ -2,6 +2,7 @@ import { Metadata } from 'next';
 import ClientComponentContainer from 'app/ClientComponentContainer';
 import GoogleAnalytics from 'app/GoogleAnalytics';
 import KakaoScript from 'app/KakaoScript';
+import { Noto_Sans_KR } from 'next/font/google';
 
 declare global {
   interface Window {
@@ -9,6 +10,12 @@ declare global {
     Kakao: any;
   }
 }
+
+export const notoSansKr = Noto_Sans_KR({
+  weight: ['300', '400', '500'],
+  subsets: ['latin'],
+  variable: '--font-noto-sans-kr',
+});
 
 export const metadata: Metadata = {
   robots: 'index, follow',

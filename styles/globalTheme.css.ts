@@ -18,6 +18,22 @@ globalStyle('a', {
 });
 
 export const global = createGlobalThemeContract({
+  fontFamily: {
+    notoSansKR: 'Noto-Sans-KR',
+  },
+  fontSize: {
+    xLarge: 'xLarge',
+    large: 'large',
+    medium: 'medium',
+    regular: 'regular',
+    small: 'small',
+    micro: 'micro',
+  },
+  fontWeight: {
+    normal: 'normal',
+    medium: 'medium',
+    large: 'large',
+  },
   device: {
     pc: 'pc',
     tab: 'tab',
@@ -64,6 +80,22 @@ export const global = createGlobalThemeContract({
 });
 
 createGlobalTheme(':root', global, {
+  fontFamily: {
+    notoSansKR: `var(--font-noto-sans-kr)`,
+  },
+  fontSize: {
+    xLarge: '48px',
+    large: '36px',
+    medium: '28px',
+    regular: '18px',
+    small: '16px',
+    micro: '14px',
+  },
+  fontWeight: {
+    normal: '400',
+    medium: '500',
+    large: '700',
+  },
   device: {
     pc: '1200px',
     tab: '900px',
