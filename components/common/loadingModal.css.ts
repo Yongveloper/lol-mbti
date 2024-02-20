@@ -43,7 +43,7 @@ export const content = style({
   textAlign: 'center',
 
   '@media': {
-    'screen and (min-width: 480px)': {
+    'screen and (max-width: 480px)': {
       width: '80%',
     },
   },
@@ -58,7 +58,7 @@ export const text = style({
   fontWeight: global.fontWeight.large,
   marginBottom: global.margin.large,
   '@media': {
-    'screen and (min-width: 480px)': {
+    'screen and (max-width: 480px)': {
       fontSize: global.fontSize.regular,
     },
   },
