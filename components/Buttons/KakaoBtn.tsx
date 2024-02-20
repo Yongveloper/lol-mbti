@@ -1,3 +1,4 @@
+'use client';
 import Button from '../common/Button';
 import KakaoIcon from 'public/images/kakaotalk_logo_icon_147272.svg';
 
