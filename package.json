@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@vanilla-extract/css": "^1.14.1",
+    "@vanilla-extract/dynamic": "^2.1.0",
     "file-saver": "^2.0.5",
     "html2canvas": "^1.4.1",
     "next": "^14.0.4",
