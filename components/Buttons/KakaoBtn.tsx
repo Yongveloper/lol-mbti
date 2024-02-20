@@ -1,5 +1,4 @@
 import Button from '../common/Button';
-import styled from 'styled-components';
 import KakaoIcon from 'public/images/kakaotalk_logo_icon_147272.svg';
 
 const KakaoBtn = () => {
