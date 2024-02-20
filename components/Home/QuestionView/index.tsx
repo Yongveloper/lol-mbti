@@ -70,7 +70,7 @@ const QuestionView = () => {
           }
           bgColor={
             answer.type === selected[currentQuestion]
-              ? 'bluePuple'
+              ? 'bluePurple'
               : 'contentBackground'
           }
         >
