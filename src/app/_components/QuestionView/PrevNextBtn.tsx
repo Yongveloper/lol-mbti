@@ -1,19 +1,6 @@
 import { IoIosArrowDropleft, IoIosArrowDropright } from 'react-icons/io';
-import styled from 'styled-components';
-
-const StyledButton = styled.svg<{ disabled: boolean }>`
-  width: 2.5rem;
-  height: 2.5rem;
-  cursor: ${({ disabled }) => (disabled ? 'not-allowed' : 'pointer')};
-  opacity: ${({ disabled }) => (disabled ? 0.3 : 1)};
-  transition: opacity 0.3s ease-in-out;
-`;
-
-const PrevNextBtnContainer = styled.div`
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-`;
+import * as style from './prevNextBtn.css';
+import { assignInlineVars } from '@vanilla-extract/dynamic';
 
 interface IPrevNextBtnProps {
   prevDisabled: boolean;
@@ -29,18 +16,24 @@ const PrevNextBtn = ({
   onNextClick,
 }: IPrevNextBtnProps) => {
   return (
-    <PrevNextBtnContainer>
-      <StyledButton
-        as={IoIosArrowDropleft}
-        disabled={prevDisabled}
+    <div className={style.container}>
+      <IoIosArrowDropleft
+        className={style.icon}
+        style={assignInlineVars({
+          [style.cursorVar]: prevDisabled ? 'not-allowed' : 'pointer',
+          [style.opacityVar]: prevDisabled ? '0.3' : '1',
+        })}
         onClick={onPrevClick}
       />
-      <StyledButton
-        as={IoIosArrowDropright}
-        disabled={nextDisabled}
+      <IoIosArrowDropright
+        className={style.icon}
+        style={assignInlineVars({
+          [style.cursorVar]: nextDisabled ? 'not-allowed' : 'pointer',
+          [style.opacityVar]: nextDisabled ? '0.3' : '1',
+        })}
         onClick={onNextClick}
       />
-    </PrevNextBtnContainer>
+    </div>
   );
 };
 
