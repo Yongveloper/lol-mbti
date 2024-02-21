@@ -18,9 +18,15 @@ export const section = style({
   justifyContent: 'center',
   padding: `${global.padding.base} 0`,
   lineHeight: 1.5,
-
   borderBottom: `3px solid ${global.color.borderColor}`,
 });
+
+export const lastSection = style([
+  section,
+  {
+    borderBottom: 'none',
+  },
+]);
 
 export const positionText = style({
   marginLeft: global.margin.small,

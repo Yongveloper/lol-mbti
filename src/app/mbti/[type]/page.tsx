@@ -97,7 +97,7 @@ const Page = ({ params }: { params: { type: string } }) => {
             </h3>
             <p>{note}</p>
           </div>
-          <div className={style.section}>
+          <div className={style.lastSection}>
             <h3 className={style.boldText}>혹시 평소 MBTI와 다른가요?</h3>
             <p>
               롤을 할 때는 다른 인격이 나올 수 있어요!
