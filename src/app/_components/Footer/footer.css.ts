@@ -13,4 +13,7 @@ export const span = style({
   fontWeight: global.fontWeight.medium,
   fontSize: global.fontSize.micro,
   color: global.color.darkGray,
+  ':last-child': {
+    marginTop: global.margin.small,
+  },
 });
