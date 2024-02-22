@@ -16,8 +16,8 @@ function ClientComponentContainer({
     <StyledComponentsRegistry>
       <ThemeProvider>
         <div className={style.container}>
-          <GlobalStyle />
-          <DarkModeBtn />
+          {/* <GlobalStyle /> */}
+          {/* <DarkModeBtn /> */}
           {children}
           <Footer />
         </div>
