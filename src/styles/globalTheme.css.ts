@@ -6,17 +6,6 @@ import {
   createGlobalTheme,
 } from '@vanilla-extract/css';
 
-globalLayer('reset');
-
-globalStyle('*', {
-  boxSizing: 'border-box',
-});
-
-globalStyle('a', {
-  textDecoration: 'none',
-  color: 'inherit',
-});
-
 export const global = createGlobalThemeContract({
   fontFamily: {
     notoSansKR: 'Noto-Sans-KR',
@@ -139,4 +128,23 @@ createGlobalTheme(':root', global, {
     borderColor: '#cbc9f9',
     gradient: 'linear-gradient(#39598A, #79D7ED)',
   },
+});
+
+globalLayer('reset');
+
+globalStyle('*', {
+  boxSizing: 'border-box',
+});
+
+globalStyle('body', {
+  fontSize: global.fontSize.small,
+  backgroundColor: global.color.mainBackground,
+  color: global.color.mainFontColor,
+  userSelect: 'none',
+  transition: 'all 0.25s linear',
+});
+
+globalStyle('a', {
+  textDecoration: 'none',
+  color: 'inherit',
 });
