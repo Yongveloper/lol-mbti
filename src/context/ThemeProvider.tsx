@@ -1,6 +1,8 @@
-import { lightTheme, darkTheme } from '../styles/theme';
+'use client';
+
 import { createContext, useEffect, useState } from 'react';
-import { ThemeProvider as StyledProvider } from 'styled-components';
+import { darkTheme, lightTheme } from 'src/styles/globalTheme.css';
+import * as style from './themeProvider.css';
 
 export const THEME_MODE = {
   LIGHT: 'LIGHT',
@@ -33,7 +35,7 @@ const ThemeProvider = ({ children }: { children: React.ReactNode }) => {
 
   return (
     <ThemeContext.Provider value={{ themeMode, setThemeMode }}>
-      <StyledProvider theme={themeObject}>{children}</StyledProvider>
+      <div className={`${themeObject} ${style.container}`}>{children}</div>
     </ThemeContext.Provider>
   );
 };

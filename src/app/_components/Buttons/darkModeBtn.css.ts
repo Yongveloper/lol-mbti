@@ -1,5 +1,5 @@
 import { createVar, style } from '@vanilla-extract/css';
-import { global } from 'src/styles/globalTheme.css';
+import { global, vars } from 'src/styles/globalTheme.css';
 
 export const container = style({
   width: '100%',
@@ -16,7 +16,7 @@ export const button = style({
   alignItems: 'center',
   overflow: 'hidden',
   padding: global.padding.small,
-  background: global.color.gradient,
+  background: vars.themeColor.color.gradient,
   border: `2px solid ${global.color.borderColor}`,
   borderRadius: '30px',
   cursor: 'pointer',

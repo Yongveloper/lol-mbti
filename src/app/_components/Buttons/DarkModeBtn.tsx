@@ -1,3 +1,5 @@
+'use client';
+
 import useDarkMode from 'src/hooks/useDarkMode';
 import SunnyIcon from 'public/images/sunny.svg';
 import MoonIcon from 'public/images/moon.svg';
@@ -5,7 +7,6 @@ import { THEME_MODE } from 'src/context/ThemeProvider';
 import * as style from './darkModeBtn.css';
 import { assignInlineVars } from '@vanilla-extract/dynamic';
 
-// Todo: background: gradient 다크모드 적용 해야함
 const DarkModeBtn = () => {
   const [themeMode, switchMode] = useDarkMode();
   return (

@@ -1,3 +1,5 @@
+'use client';
+
 import { useCallback, useContext } from 'react';
 import { THEME_MODE, Theme, ThemeContext } from 'src/context/ThemeProvider';
 

@@ -1,74 +1,11 @@
 import {
-  createGlobalThemeContract,
   globalStyle,
-  globalLayer,
   createThemeContract,
   createGlobalTheme,
+  createTheme,
 } from '@vanilla-extract/css';
 
-export const global = createGlobalThemeContract({
-  fontFamily: {
-    notoSansKR: 'Noto-Sans-KR',
-  },
-  fontSize: {
-    xLarge: 'fontSize-xLarge',
-    large: 'fontSize-large',
-    medium: 'fontSize-medium',
-    regular: 'fontSize-regular',
-    small: 'fontSize-small',
-    micro: 'fontSize-micro',
-  },
-  fontWeight: {
-    normal: 'fontWeight-normal',
-    medium: 'fontWeight-medium',
-    large: 'fontWeight-large',
-  },
-  device: {
-    pc: 'pc',
-    tab: 'tab',
-    mobile: 'mobile',
-    mobileS: 'mobileS',
-  },
-  margin: {
-    small: 'margin-small',
-    base: 'margin-base',
-    medium: 'margin-medium',
-    large: 'margin-large',
-    xLarge: 'margin-xLarge',
-  },
-  padding: {
-    small: 'padding-small',
-    base: 'padding-base',
-    large: 'padding-large',
-    xLarge: 'padding-xLarge',
-  },
-  shadow: {
-    base: 'shadow-base',
-  },
-  color: {
-    white: 'white',
-    whiteYellow: 'whiteYellow',
-    yellow: 'yellow',
-    whiteBlue: 'whiteBlue',
-    bluePurple: 'bluePurple',
-    lightBlue: 'lightBlue',
-    lightGray: 'lightGray',
-    whiteGray: 'whiteGray',
-    darkGray: 'darkGray',
-    laime: 'laime',
-    lightRed: 'lightRed',
-    pink: 'pink',
-    red: 'red',
-    black: 'black',
-    mainBackground: 'mainBackground',
-    contentBackground: 'contentBackground',
-    mainFontColor: 'mainFontColor',
-    borderColor: 'borderColor',
-    gradient: 'gradient',
-  },
-});
-
-createGlobalTheme(':root', global, {
+export const global = createGlobalTheme(':root', {
   fontFamily: {
     notoSansKR: `var(--font-noto-sans-kr)`,
   },
@@ -130,7 +67,37 @@ createGlobalTheme(':root', global, {
   },
 });
 
-globalLayer('reset');
+export const themeColor = createThemeContract({
+  color: {
+    mainBackground: null,
+    contentBackground: null,
+    mainFontColor: null,
+    borderColor: null,
+    gradient: null,
+  },
+});
+
+export const lightTheme = createTheme(themeColor, {
+  color: {
+    mainBackground: '#f7f9fa',
+    contentBackground: '#ffffff',
+    mainFontColor: '#2c2c2c',
+    borderColor: '#cbc9f9',
+    gradient: 'linear-gradient(#39598A, #79D7ED)',
+  },
+});
+
+export const darkTheme = createTheme(themeColor, {
+  color: {
+    mainBackground: '#1d1d1d',
+    contentBackground: '#2c2c2c',
+    mainFontColor: '#ffffff',
+    borderColor: '#b1b1b3',
+    gradient: 'linear-gradient(#091236, #1E215D)',
+  },
+});
+
+export const vars = { ...global, themeColor };
 
 globalStyle('*', {
   boxSizing: 'border-box',
@@ -138,8 +105,6 @@ globalStyle('*', {
 
 globalStyle('body', {
   fontSize: global.fontSize.small,
-  backgroundColor: global.color.mainBackground,
-  color: global.color.mainFontColor,
   userSelect: 'none',
   transition: 'all 0.25s linear',
 });
