@@ -1,10 +1,11 @@
 import { createVar, style } from '@vanilla-extract/css';
-import { global } from 'src/styles/globalTheme.css';
+import { global, vars } from 'src/styles/globalTheme.css';
 
 export const mainTitle = style({
   fontSize: global.fontSize.xLarge,
   fontWeight: global.fontWeight.large,
   marginBottom: global.margin.base,
+  color: vars.themeColor.color.mainFontColor,
 
   '@media': {
     'screen and (max-width: 370px)': {

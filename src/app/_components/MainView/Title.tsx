@@ -7,13 +7,13 @@ import adIcon from 'public/images/position/ad.png';
 import spIcon from 'public/images/position/sp.png';
 import * as style from './title.css';
 import { assignInlineVars } from '@vanilla-extract/dynamic';
-import { global } from 'src/styles/globalTheme.css';
+import { global, vars } from 'src/styles/globalTheme.css';
 
 const Title = () => {
   const images = [topIcon, jgIcon, midIcon, adIcon, spIcon];
   const textColors = [
     global.color.lightBlue,
-    global.color.black,
+    vars.themeColor.color.mainFontColor,
     global.color.red,
     global.color.yellow,
     global.color.laime,
