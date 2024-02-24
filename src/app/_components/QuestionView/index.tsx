@@ -6,7 +6,7 @@ import LoadingModal from 'src/app/_components/QuestionView/LoadingModal';
 import useQuestionnaire from 'src/hooks/useQuestionnaire';
 import * as style from './questionView.css';
 import { assignInlineVars } from '@vanilla-extract/dynamic';
-import { global } from 'src/styles/globalTheme.css';
+import { global, vars } from 'src/styles/globalTheme.css';
 
 const QuestionView = () => {
   const {
@@ -49,7 +49,7 @@ const QuestionView = () => {
             [style.questionButtonBackgroundColor]:
               answer.type === selected[currentQuestion]
                 ? global.color.bluePurple
-                : global.color.contentBackground,
+                : vars.themeColor.color.contentBackground,
           })}
           key={index}
           name={answer.type}
