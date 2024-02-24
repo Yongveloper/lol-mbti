@@ -1,4 +1,4 @@
-import { global } from 'src/styles/globalTheme.css';
+import { global, vars } from 'src/styles/globalTheme.css';
 import { assignInlineVars } from '@vanilla-extract/dynamic';
 import * as style from './button.css';
 
@@ -31,7 +31,7 @@ interface IButtonProps {
 const Button = ({
   children,
   onClick,
-  bgColor = 'contentBackground',
+  bgColor,
   fontColor = 'lightBlue',
   borderColor = 'whiteBlue',
   name,
@@ -39,7 +39,9 @@ const Button = ({
   <button
     className={style.button}
     style={assignInlineVars({
-      [style.backgroundColor]: global.color[bgColor],
+      [style.backgroundColor]: bgColor
+        ? global.color[bgColor]
+        : vars.themeColor.color.contentBackground,
       [style.fontColor]: global.color[fontColor],
       [style.borderColor]: global.color[borderColor],
     })}
