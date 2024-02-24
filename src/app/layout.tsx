@@ -1,5 +1,4 @@
 import { Metadata } from 'next';
-import ClientComponentContainer from 'src/app/_components/ClientComponentContainer';
 import GoogleAnalytics from 'src/app/_lib/GoogleAnalytics';
 import KakaoScript from 'src/app/_lib/KakaoScript';
 import { Noto_Sans_KR } from 'next/font/google';

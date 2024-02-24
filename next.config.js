@@ -6,7 +6,7 @@ const withBundleAnalyzer = require('@next/bundle-analyzer')({
 });
 
 const nextConfig = {
-  // output: 'export',
+  output: 'export',
   reactStrictMode: true,
   webpack(config) {
     config.module.rules.push({
@@ -16,10 +16,7 @@ const nextConfig = {
 
     return config;
   },
-  compiler: {
-    // ssr and displayName are configured by default
-    styledComponents: true,
-  },
+
   experimental: {
     turbo: {
       rules: {
