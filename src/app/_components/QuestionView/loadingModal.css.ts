@@ -1,5 +1,5 @@
 import { keyframes, style } from '@vanilla-extract/css';
-import { global } from 'src/styles/globalTheme.css';
+import { global, vars } from 'src/styles/globalTheme.css';
 
 const rotate = keyframes({
   '100%': {
@@ -37,7 +37,8 @@ export const content = style({
   height: '300px',
   padding: `${global.padding.xLarge} ${global.padding.base}`,
   marginBottom: global.margin.xLarge,
-  backgroundColor: global.color.contentBackground,
+  backgroundColor: vars.themeColor.color.contentBackground,
+  color: vars.themeColor.color.mainFontColor,
   boxShadow: global.shadow.base,
   border: `2px solid ${global.color.borderColor}`,
   textAlign: 'center',
