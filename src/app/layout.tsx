@@ -5,6 +5,10 @@ import KakaoScript from 'src/app/_lib/KakaoScript';
 import { Noto_Sans_KR } from 'next/font/google';
 import 'src/styles/reset.css';
 import 'src/styles/globalTheme.css';
+import * as style from './layout.css';
+import Footer from './_components/Footer';
+import ThemeProvider from 'src/context/ThemeProvider';
+import DarkModeBtn from './_components/Buttons/DarkModeBtn';
 
 declare global {
   interface Window {
@@ -58,8 +62,14 @@ export default function RootLayout({
   return (
     <html lang="ko">
       <body className={`${notoSansKr.className}`}>
-        <GoogleAnalytics />
-        <ClientComponentContainer>{children}</ClientComponentContainer>
+        <ThemeProvider>
+          <GoogleAnalytics />
+          <div className={style.container}>
+            <DarkModeBtn />
+            {children}
+            <Footer />
+          </div>
+        </ThemeProvider>
       </body>
       <KakaoScript />
     </html>
