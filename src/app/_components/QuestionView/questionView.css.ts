@@ -25,11 +25,6 @@ export const questionButton = style([
     border: `2px solid ${global.color.borderColor}`,
     color: questionButtonFontColor,
     backgroundColor: questionButtonBackgroundColor,
-    ':hover': {
-      color: global.color.white,
-      backgroundColor: global.color.bluePurple,
-      transition: 'background-color 0.1s linear',
-    },
   },
 ]);
 
