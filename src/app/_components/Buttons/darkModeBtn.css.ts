@@ -3,14 +3,15 @@ import { global, vars } from 'src/styles/globalTheme.css';
 
 export const container = style({
   width: '100%',
+  height: 30,
   display: 'flex',
   justifyContent: 'flex-end',
   marginBottom: global.margin.base,
 });
 
 export const button = style({
-  width: '80px',
-  height: '30px',
+  width: 80,
+  height: 30,
   display: 'flex',
   justifyContent: 'space-between',
   alignItems: 'center',
@@ -18,7 +19,7 @@ export const button = style({
   padding: global.padding.small,
   background: vars.themeColor.color.gradient,
   border: `2px solid ${global.color.borderColor}`,
-  borderRadius: '30px',
+  borderRadius: 30,
   cursor: 'pointer',
 });
 

@@ -37,7 +37,7 @@ export const content = style({
   height: '300px',
   padding: `${global.padding.xLarge} ${global.padding.base}`,
   marginBottom: global.margin.xLarge,
-  backgroundColor: vars.themeColor.color.contentBackground,
+  backgroundColor: `hsl(${vars.themeColor.color.contentBackground})`,
   color: vars.themeColor.color.mainFontColor,
   boxShadow: global.shadow.base,
   border: `2px solid ${global.color.borderColor}`,

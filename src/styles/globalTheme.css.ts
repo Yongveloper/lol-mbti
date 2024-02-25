@@ -79,8 +79,8 @@ export const themeColor = createThemeContract({
 
 export const lightTheme = createTheme(themeColor, {
   color: {
-    mainBackground: '#f7f9fa',
-    contentBackground: '#ffffff',
+    mainBackground: '0 0% 100%',
+    contentBackground: '0 0% 100%',
     mainFontColor: '#2c2c2c',
     borderColor: '#cbc9f9',
     gradient: 'linear-gradient(#39598A, #79D7ED)',
@@ -89,8 +89,8 @@ export const lightTheme = createTheme(themeColor, {
 
 export const darkTheme = createTheme(themeColor, {
   color: {
-    mainBackground: '#1d1d1d',
-    contentBackground: '#2c2c2c',
+    mainBackground: '222.2 84% 4.9%',
+    contentBackground: '222.2 84% 8.9%',
     mainFontColor: '#ffffff',
     borderColor: '#b1b1b3',
     gradient: 'linear-gradient(#091236, #1E215D)',
@@ -105,6 +105,7 @@ globalStyle('*', {
 
 globalStyle('body', {
   fontSize: global.fontSize.small,
+  backgroundColor: `hsl(${vars.themeColor.color.mainBackground})`,
   userSelect: 'none',
   transition: 'all 0.25s linear',
 });

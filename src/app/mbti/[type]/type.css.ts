@@ -5,7 +5,7 @@ export const content = style({
   width: '100%',
   padding: `${global.padding.small} ${global.padding.base}`,
   marginBottom: global.margin.xLarge,
-  backgroundColor: vars.themeColor.color.contentBackground,
+  backgroundColor: `hsl(${vars.themeColor.color.contentBackground})`,
   boxShadow: global.shadow.base,
   border: `2px solid ${global.color.borderColor}`,
   textAlign: 'center',

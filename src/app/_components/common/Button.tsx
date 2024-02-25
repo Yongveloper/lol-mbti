@@ -41,7 +41,7 @@ const Button = ({
     style={assignInlineVars({
       [style.backgroundColor]: bgColor
         ? global.color[bgColor]
-        : vars.themeColor.color.contentBackground,
+        : `hsl(${vars.themeColor.color.contentBackground})`,
       [style.fontColor]: global.color[fontColor],
       [style.borderColor]: global.color[borderColor],
     })}

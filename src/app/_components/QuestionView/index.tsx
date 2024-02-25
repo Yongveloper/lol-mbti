@@ -49,7 +49,7 @@ const QuestionView = () => {
             [style.questionButtonBackgroundColor]:
               answer.type === selected[currentQuestion]
                 ? global.color.bluePurple
-                : vars.themeColor.color.contentBackground,
+                : `hsl(${vars.themeColor.color.contentBackground})`,
           })}
           key={index}
           name={answer.type}

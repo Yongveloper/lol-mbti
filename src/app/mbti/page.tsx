@@ -29,6 +29,7 @@ export const metadata: Metadata = {
 
 const Page = () => {
   const mbtiTypes = Object.keys(types);
+
   return (
     <>
       <Content>
