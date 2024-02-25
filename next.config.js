@@ -1,5 +1,15 @@
-module.exports = {
-  output: 'export',
+const { createVanillaExtractPlugin } = require('@vanilla-extract/next-plugin');
+const withVanillaExtract = createVanillaExtractPlugin();
+
+const withBundleAnalyzer = require('@next/bundle-analyzer')({
+  enabled: process.env.ANALYZE === 'true',
+});
+
+/**
+ * @type {import('next').NextConfig}
+ */
+const nextConfig = {
+  // output: 'export',
   reactStrictMode: true,
   webpack(config) {
     config.module.rules.push({
@@ -9,10 +19,7 @@ module.exports = {
 
     return config;
   },
-  compiler: {
-    // ssr and displayName are configured by default
-    styledComponents: true,
-  },
+
   experimental: {
     turbo: {
       rules: {
@@ -24,3 +31,5 @@ module.exports = {
     },
   },
 };
+
+module.exports = withBundleAnalyzer(withVanillaExtract(nextConfig));
