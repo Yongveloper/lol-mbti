@@ -6,7 +6,7 @@ const withBundleAnalyzer = require('@next/bundle-analyzer')({
 });
 
 const nextConfig = {
-  output: 'export',
+  // output: 'export',
   reactStrictMode: true,
   webpack(config) {
     config.module.rules.push({
