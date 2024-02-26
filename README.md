@@ -13,9 +13,10 @@
 ### [개발 배경](https://yongvelpoer.gitbook.io/lol-mbti/)에서 개발 중 시행착오, 설계 등 확인할 수 있습니다.
 
 <p align='center'>
-    <img src="https://img.shields.io/badge/Typescript-v4.3.5-blue?logo=typescript"/>
-    <img src="https://img.shields.io/badge/Next.js-v11.0.1-blue?logo=Next.js"/>
-    <img src="https://img.shields.io/badge/styled components-v5.3.0-pink?logo=react">
+    <img src="https://img.shields.io/badge/Typescript-v4.5.2-blue?logo=typescript"/>
+    <img src="https://img.shields.io/badge/Next.js-v14.0.4-blue?logo=Next.js"/>
+    <img src="https://img.shields.io/badge/styled components-v5.3.0-yellow">
+    <img src="https://img.shields.io/badge/vanilla_extract-v1.14.1-pink">
 </p>
 
 ## ❗ What I Earned
@@ -35,7 +36,18 @@
 - **오픈 API(카카오톡 공유)** 적용 및 이해
 - **html2canvas** + **file-saver**로 DOM 캡쳐, 저장 기능 구현 및 이해
 
-### ✅ Next.js 11 -> 14 마이그레이션 (2024년 12월 18일)
+### ✅ styled-components ➡️ vanilla-extract 마이그레이션 (2024년 2월 25일)
+
+[관련포스팅](https://yong-nyong.tistory.com/92)
+
+- 강제적인 클라이언트 컴포넌트 문제 해결
+
+- CSS 런타임 환경 ➡️ 제로 런타임
+- 번들 크기 **10%** 감소
+
+### ✅ Next.js 11 ➡️ 14 (app) 마이그레이션 (2024년 12월 18일)
+
+[관련 포스팅](https://yong-nyong.tistory.com/84)
 
 - 관련 종속성 업데이트
   - React 17.0.2 -> 18.2.0
@@ -59,9 +71,11 @@
 
 ### 테마(다크모드)
 
-<img width="400" alt="darkmode" src="https://user-images.githubusercontent.com/64254228/130263140-4e282b9f-4d1e-4a64-9536-16a50729a110.gif">
+<img width="300" height="500" alt="darkmode" src="https://github.com/Yongveloper/LOL-MBTI/assets/64254228/0e289ac2-97c2-478c-9eff-716188142675">
 
-- styled-component를 사용한 custom hook을 활용해서 상단에서 다크모드를 설정할 수 있습니다.
+- ~~styled-component를 사용한 custom hook을 활용해서 상단에서 다크모드를 설정할 수 있습니다.~~
+- `vanilla-extract`와 `next-themes`를 활용했습니다.
+- 사용자의 로컬 모드와 로컬 스토리지를 확인하여 다크모드를 적용할 수 있습니다.
 
 ### 카카오톡 공유하기
 
@@ -81,14 +95,14 @@
 
 <img width="400" alt="result" src="https://user-images.githubusercontent.com/64254228/130264757-1a6c0c14-18e0-44ad-a776-731c3b7b704a.gif">
 
-- 결과 보기 클릭 시 결과 로딩 모달창 컴포넌트를 불러오며 setTimeOut으로 결과 페이지로 넘겨줍니다.
+- 결과 보기 클릭 시 결과 로딩 모달창 컴포넌트를 불러오며 `setTimeOut`으로 결과 페이지로 넘겨줍니다.
 
 ### 결과 페이지
 
 <img width="400" alt="result-page" src="https://user-images.githubusercontent.com/64254228/130265500-022a251c-a756-4b31-bcd7-717ba20dfac1.png">
 
 - 해당 유형의 특징을 보여줍니다.
-- 결과 저장하기 클릭 시 결과 내용을 html2canvas + file-saver를 사용해서 이미지로 저장할 수 있습니다.
+- 결과 저장하기 클릭 시 결과 내용을 `html2canvas` + `file-saver`를 사용해서 이미지로 저장할 수 있습니다.
 - 링크 복사하기 클릭 시 해당 링크를 클립보드로 복사할 수 있습니다.
 
 ## 📚 기술 스택
